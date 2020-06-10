@@ -1,0 +1,63 @@
+language: r
+
+repos:
+  CRAN: https://cloud.r-project.org
+  folkehelseinstituttet: https://folkehelseinstituttet.github.io/drat/
+  euromomo: https://euromomonetwork.github.io/drat/
+  raubreywhite: https://raubreywhite.github.io/drat/
+
+addons:
+  apt:
+    sources:
+      - sourceline: 'ppa:opencpu/jq'
+      - sourceline: 'ppa:ubuntugis/ubuntugis-unstable'
+    packages:
+      - libudunits2-dev
+      - libprotobuf-dev
+      - protobuf-compiler
+      - libv8-3.14-dev
+      - libjq-dev
+      - libudunits2-dev
+      - libproj-dev
+      - libgeos-dev
+      - libspatialite-dev
+      - libgdal-dev
+      - libjson-c-dev
+
+r_packages:
+- covr
+- drat
+- pkgdown
+- lintr
+- styler
+- devtools
+- data.table
+- stringr
+- glue
+- lubridate
+- readxl
+- zoo
+- crayon
+- fs
+- utils
+
+before_install:
+- bash travis/make.sh
+- sudo apt-get install libnetcdf-dev netcdf-bin
+before_script:
+- bash travis/data.sh
+after_success:
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash
+  travis/drat.sh
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash
+  travis/styler.sh
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && Rscript
+  -e 'Sys.sleep(30);install.packages("fhidata",repos="https://folkehelseinstituttet.github.io/drat/");pkgdown::build_site()'
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: "$GITHUB_PAT"
+  keep-history: true
+  local-dir: docs
+  on:
+    branch: master
