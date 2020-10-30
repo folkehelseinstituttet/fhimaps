@@ -1,4 +1,6 @@
 language: r
+cache:
+- packages
 
 repos:
   CRAN: https://cloud.r-project.org
@@ -25,11 +27,9 @@ addons:
       - libjson-c-dev
 
 r_packages:
-- covr
 - drat
-- pkgdown
+#- pkgdown
 - lintr
-- styler
 - devtools
 - data.table
 - stringr
@@ -39,25 +39,22 @@ r_packages:
 - zoo
 - crayon
 - fs
-- utils
 
 before_install:
 - bash travis/make.sh
 - sudo apt-get install libnetcdf-dev netcdf-bin
-before_script:
-- bash travis/data.sh
+# before_script:
+# - bash travis/data.sh
 after_success:
 - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash
   travis/drat.sh
-- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash
-  travis/styler.sh
-- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && Rscript
-  -e 'Sys.sleep(30);install.packages("fhidata",repos="https://folkehelseinstituttet.github.io/drat/");pkgdown::build_site()'
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: "$GITHUB_PAT"
-  keep-history: true
-  local-dir: docs
-  on:
-    branch: master
+# - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && Rscript
+#   -e 'Sys.sleep(30);install.packages("fhidata",repos="https://folkehelseinstituttet.github.io/drat/");pkgdown::build_site()'
+# deploy:
+#   provider: pages
+#   skip-cleanup: true
+#   github-token: "$GITHUB_PAT"
+#   keep-history: true
+#   local-dir: docs
+#   on:
+#     branch: master

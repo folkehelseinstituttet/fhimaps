@@ -31,5 +31,6 @@ Current `fhiverse` packages are:
 - [plnr](https://folkehelseinstituttet.github.io/plnr)
 - [spread](https://folkehelseinstituttet.github.io/spread)
 - [fhidata](https://folkehelseinstituttet.github.io/fhidata)
+- [fhimaps](https://folkehelseinstituttet.github.io/fhimaps)
 - [fhiplot](https://folkehelseinstituttet.github.io/fhiplot)
 - [fhi](https://folkehelseinstituttet.github.io/fhi)

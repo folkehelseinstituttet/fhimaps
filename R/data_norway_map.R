@@ -1,7 +1,7 @@
 ###### 2020 SPLIT
-#' Split map of Norwegian Counties (2020 borders)
+#' Split map of Norwegian county (2020 borders)
 #'
-#' We conveniently package map datasets for Norwegian counties
+#' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
 #' libraries. This data is licensed under Creative Commons BY 4.0 (CC BY 4.0).
 #'
@@ -18,7 +18,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_split_counties_b2020,
+#'   data = fhimaps::norway_map_split_county_b2020,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -26,7 +26,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_split_counties_b2020"
+"norway_map_split_county_b2020"
 
 #' Split map of Norwegian Municipalities (2020 borders)
 #'
@@ -47,7 +47,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_split_municips_b2020,
+#'   data = fhimaps::norway_map_split_municip_b2020,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -55,13 +55,27 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_split_municips_b2020"
+"norway_map_split_municip_b2020"
 
 ###### 2020 WITHOUT INSERTS
 
-#' Maps of Norwegian Counties (2020 borders)
+#' Maps of Norwegian county (2020 borders) in sf format
 #'
-#' We conveniently package map datasets for Norwegian counties
+#' This data is licensed under Creative Commons BY 4.0 (CC BY 4.0).
+#'
+#' @format
+#' \describe{
+#' \item{long}{Location code.}
+#' \item{lat}{Location name.}
+#' \item{order}{The order that this line should be plotted in.}
+#' \item{location_code}{Location code (county code).}
+#' }
+#' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
+"norway_map_county_b2020_sf"
+
+#' Maps of Norwegian county (2020 borders)
+#'
+#' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
 #' libraries. This data is licensed under Creative Commons BY 4.0 (CC BY 4.0).
 #'
@@ -78,7 +92,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_counties_b2020,
+#'   data = fhimaps::norway_map_county_b2020,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -86,7 +100,22 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_counties_b2020"
+"norway_map_county_b2020"
+
+#' Maps of Norwegian Municipalities (2020 borders) in sf format
+#'
+#' This data is licensed under Creative Commons BY 4.0 (CC BY 4.0).
+#'
+#' @format
+#' \describe{
+#' \item{long}{Location code.}
+#' \item{lat}{Location name.}
+#' \item{order}{The order that this line should be plotted in.}
+#' \item{group}{Needs to be used as 'group' aesthetic in ggplot2.}
+#' \item{location_code}{Location code (municipality code).}
+#' }
+#' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
+"norway_map_municip_b2020_sf"
 
 #' Maps of Norwegian Municipalities (2020 borders)
 #'
@@ -107,7 +136,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_municips_b2020,
+#'   data = fhimaps::norway_map_municip_b2020,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -115,13 +144,13 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_municips_b2020"
+"norway_map_municip_b2020"
 
 ###### 2020 WITH INSERTS
 
-#' Maps of Norwegian counties with insert (2020 borders)
+#' Maps of Norwegian county with insert (2020 borders)
 #'
-#' We conveniently package map datasets for Norwegian counties
+#' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
 #' libraries. This data is licensed under Creative Commons BY 4.0 (CC BY 4.0).
 #'
@@ -138,7 +167,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_counties_with_insert_b2020,
+#'   data = fhimaps::norway_map_county_with_insert_b2020,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -146,7 +175,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_counties_with_insert_b2020"
+"norway_map_county_with_insert_b2020"
 
 #' Maps of Norwegian municipalities with insert (2020 borders)
 #'
@@ -167,7 +196,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_municips_with_insert_b2020,
+#'   data = fhimaps::norway_map_municip_with_insert_b2020,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -175,13 +204,28 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_municips_with_insert_b2020"
+"norway_map_municip_with_insert_b2020"
 
 ###### 2019 WITHOUT INSERTS
 
-#' Maps of Norwegian Counties (2019 borders)
+#' Maps of Norwegian county (2019 borders) in sf format
 #'
-#' We conveniently package map datasets for Norwegian counties
+#' This data is licensed under Creative Commons 0.
+#'
+#' @format
+#' \describe{
+#' \item{long}{Location code.}
+#' \item{lat}{Location name.}
+#' \item{order}{The order that this line should be plotted in.}
+#' \item{group}{Needs to be used as 'group' aesthetic in ggplot2.}
+#' \item{location_code}{Location code (county code).}
+#' }
+#' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
+"norway_map_county_b2019_sf"
+
+#' Maps of Norwegian county (2019 borders)
+#'
+#' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
 #' libraries. This data is licensed under Creative Commons 0.
 #'
@@ -198,7 +242,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_counties_b2019,
+#'   data = fhimaps::norway_map_county_b2019,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -206,7 +250,22 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_counties_b2019"
+"norway_map_county_b2019"
+
+#' Maps of Norwegian Municipalities (2019 borders) in sf format
+#'
+#' This data is licensed under Creative Commons 0.
+#'
+#' @format
+#' \describe{
+#' \item{long}{Location code.}
+#' \item{lat}{Location name.}
+#' \item{order}{The order that this line should be plotted in.}
+#' \item{group}{Needs to be used as 'group' aesthetic in ggplot2.}
+#' \item{location_code}{Location code (municipality code).}
+#' }
+#' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
+"norway_map_municip_b2019_sf"
 
 #' Maps of Norwegian Municipalities (2019 borders)
 #'
@@ -227,7 +286,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_municips_b2019,
+#'   data = fhimaps::norway_map_municip_b2019,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -235,13 +294,13 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_municips_b2019"
+"norway_map_municip_b2019"
 
 ###### 2019 WITH INSERTS
 
-#' Maps of Norwegian counties with inserts (2019 borders)
+#' Maps of Norwegian county with inserts (2019 borders)
 #'
-#' We conveniently package map datasets for Norwegian counties
+#' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
 #' libraries. This data is licensed under Creative Commons 0.
 #'
@@ -258,7 +317,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_counties_with_insert_b2019,
+#'   data = fhimaps::norway_map_county_with_insert_b2019,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -266,7 +325,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_counties_with_insert_b2019"
+"norway_map_county_with_insert_b2019"
 
 #' Maps of Norwegian municipalities with insert (2019 borders)
 #'
@@ -287,7 +346,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_municips_with_insert_b2019,
+#'   data = fhimaps::norway_map_municip_with_insert_b2019,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -295,13 +354,28 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_municips_with_insert_b2019"
+"norway_map_municip_with_insert_b2019"
 
 ###### 2017 WITHOUT INSERTS
 
-#' Maps of Norwegian Counties (2017 borders)
+#' Maps of Norwegian county (2017 borders) in sf format
 #'
-#' We conveniently package map datasets for Norwegian counties
+#' This data is licensed under Creative Commons 0.
+#'
+#' @format
+#' \describe{
+#' \item{long}{Location code.}
+#' \item{lat}{Location name.}
+#' \item{order}{The order that this line should be plotted in.}
+#' \item{group}{Needs to be used as 'group' aesthetic in ggplot2.}
+#' \item{location_code}{Location code (county code).}
+#' }
+#' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
+"norway_map_county_b2017_sf"
+
+#' Maps of Norwegian county (2017 borders)
+#'
+#' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
 #' libraries. This data is licensed under Creative Commons 0.
 #'
@@ -317,17 +391,17 @@
 #' @examples
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
-#' q <- q + geom_polygon(data = fhidata::norway_map_counties_b2017, color = "black", fill = "white", size = 0.2)
+#' q <- q + geom_polygon(data = fhimaps::norway_map_county_b2017, color = "black", fill = "white", size = 0.2)
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_counties_b2017"
+"norway_map_county_b2017"
 
 ###### 2017 WITH INSERTS
 
-#' Maps of Norwegian counties with inserts (2017 borders)
+#' Maps of Norwegian county with inserts (2017 borders)
 #'
-#' We conveniently package map datasets for Norwegian counties
+#' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
 #' libraries. This data is licensed under Creative Commons 0.
 #'
@@ -343,17 +417,17 @@
 #' @examples
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
-#' q <- q + geom_polygon(data = fhidata::norway_map_counties_with_insert_b2017, color = "black", fill = "white", size = 0.2)
+#' q <- q + geom_polygon(data = fhimaps::norway_map_county_with_insert_b2017, color = "black", fill = "white", size = 0.2)
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_counties_with_insert_b2017"
+"norway_map_county_with_insert_b2017"
 
 #### LABEL POSITIONS
 
-#' Label Positions for Norwegian Counties (2020 borders)
+#' Label Positions for Norwegian county (2020 borders)
 #'
-#' GPS coordinates for labels for Norwegian counties
+#' GPS coordinates for labels for Norwegian county
 #'
 #' @format
 #' \describe{
@@ -365,24 +439,24 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_counties_b2020,
+#'   data = fhimaps::norway_map_county_b2020,
 #'   mapping = aes(group = group),
 #'   color = "black",
 #'   fill = "white"
 #' )
 #' q <- q + geom_text(
-#'   data = fhidata::norway_map_counties_label_positions_b2020,
+#'   data = fhimaps::norway_map_county_label_positions_b2020,
 #'   mapping = aes(label = location_code),
 #'   color = "red"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_counties_label_positions_b2020"
+"norway_map_county_label_positions_b2020"
 
-#' Label Positions for Norwegian Counties (2019 borders)
+#' Label Positions for Norwegian county (2019 borders)
 #'
-#' GPS coordinates for labels for Norwegian counties
+#' GPS coordinates for labels for Norwegian county
 #'
 #' @format
 #' \describe{
@@ -394,25 +468,25 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_counties_b2019,
+#'   data = fhimaps::norway_map_county_b2019,
 #'   mapping = aes(group = group),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
 #' )
 #' q <- q + geom_text(
-#'   data = fhidata::norway_map_counties_label_positions_b2019,
+#'   data = fhimaps::norway_map_county_label_positions_b2019,
 #'   mapping = aes(label = location_code),
 #'   color = "red"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_counties_label_positions_b2019"
+"norway_map_county_label_positions_b2019"
 
-#' Label Positions for Norwegian Counties (2017 borders)
+#' Label Positions for Norwegian county (2017 borders)
 #'
-#' GPS coordinates for labels for Norwegian counties
+#' GPS coordinates for labels for Norwegian county
 #'
 #' @format
 #' \describe{
@@ -424,21 +498,21 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
-#'   data = fhidata::norway_map_counties_b2017,
+#'   data = fhimaps::norway_map_county_b2017,
 #'   mapping = aes(group = group),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
 #' )
 #' q <- q + geom_text(
-#'   data = fhidata::norway_map_counties_label_positions_b2017,
+#'   data = fhimaps::norway_map_county_label_positions_b2017,
 #'   mapping = aes(label = location_code),
 #'   color = "red"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_counties_label_positions_b2017"
+"norway_map_county_label_positions_b2017"
 
 #### TITLE POSITIONS
 
@@ -453,7 +527,7 @@
 #' }
 #' @examples
 #' library(ggplot2)
-#' pd <- fhidata::norway_map_counties_with_insert_b2020
+#' pd <- fhimaps::norway_map_county_with_insert_b2020
 #' q <- ggplot()
 #' q <- q + geom_polygon(
 #'   data = pd,
@@ -464,8 +538,8 @@
 #' )
 #' q <- q + annotate(
 #'   "text",
-#'   x = fhidata::norway_map_insert_title_position_b2020$long,
-#'   y = fhidata::norway_map_insert_title_position_b2020$lat,
+#'   x = fhimaps::norway_map_insert_title_position_b2020$long,
+#'   y = fhimaps::norway_map_insert_title_position_b2020$lat,
 #'   label = "Oslo"
 #' )
 #' q <- q + theme_void()
@@ -484,7 +558,7 @@
 #' }
 #' @examples
 #' library(ggplot2)
-#' pd <- fhidata::norway_map_counties_with_insert_b2019
+#' pd <- fhimaps::norway_map_county_with_insert_b2019
 #' q <- ggplot()
 #' q <- q + geom_polygon(
 #'   data = pd,
@@ -495,8 +569,8 @@
 #' )
 #' q <- q + annotate(
 #'   "text",
-#'   x = fhidata::norway_map_counties_with_insert_b2019$long,
-#'   y = fhidata::norway_map_counties_with_insert_b2019$lat,
+#'   x = fhimaps::norway_map_county_with_insert_b2019$long,
+#'   y = fhimaps::norway_map_county_with_insert_b2019$lat,
 #'   label = "Oslo"
 #' )
 #' q <- q + theme_void()
@@ -515,7 +589,7 @@
 #' }
 #' @examples
 #' library(ggplot2)
-#' pd <- fhidata::norway_map_counties_with_insert_b2017
+#' pd <- fhimaps::norway_map_county_with_insert_b2017
 #' q <- ggplot()
 #' q <- q + geom_polygon(
 #'   data = pd,
@@ -526,8 +600,8 @@
 #' )
 #' q <- q + annotate(
 #'   "text",
-#'   x = fhidata::norway_map_counties_with_insert_b2017$long,
-#'   y = fhidata::norway_map_counties_with_insert_b2017$lat,
+#'   x = fhimaps::norway_map_county_with_insert_b2017$long,
+#'   y = fhimaps::norway_map_county_with_insert_b2017$lat,
 #'   label = "Oslo"
 #' )
 #' q <- q + theme_void()
@@ -535,7 +609,7 @@
 #' q
 "norway_map_insert_title_position_b2017"
 
-gen_norway_map_counties_label_positions <- function(x_year_end) {
+gen_norway_map_county_label_positions <- function(x_year_end) {
   stopifnot(x_year_end %in% c("2017", "2019", "2020"))
 
   if (x_year_end == 2017) {
@@ -623,7 +697,7 @@ gen_norway_map_insert_title_position <- function(x_year_end) {
 
 # insert for oslo/akershus?
 # split the country in 2?
-gen_norway_map_counties <- function(x_year_end, insert = FALSE, split = FALSE) {
+gen_norway_map_county <- function(x_year_end, insert = FALSE, split = FALSE, return_sf=FALSE) {
   stopifnot(x_year_end %in% c("2017", "2019", "2020"))
 
   . <- NULL
@@ -637,26 +711,36 @@ gen_norway_map_counties <- function(x_year_end, insert = FALSE, split = FALSE) {
   hole <- NULL
   piece <- NULL
 
-  require_namespace(c("geojsonio", "broom", "rmapshaper", "sp"))
   if (x_year_end == 2017) {
     spdf <- geojsonio::geojson_read(
-      system.file("extdata", "Fylker17.geojson", package = "fhidata"),
+      system.file("extdata", "Fylker17.geojson", package = "fhimaps"),
       what = "sp"
     )
+    spdf_simple <- rgeos::gSimplify(spdf, tol=2000, topologyPreserve = F)
+    # pryr::object_size(spdf_simple)
   } else if (x_year_end == 2019) {
     spdf <- geojsonio::geojson_read(
-      system.file("extdata", "Fylker19.geojson", package = "fhidata"),
+      system.file("extdata", "Fylker19.geojson", package = "fhimaps"),
       what = "sp"
     )
-    spdf_simple <- rmapshaper::ms_simplify(spdf, keep = 0.1)
+    spdf_simple <- rgeos::gSimplify(spdf, tol=2000, topologyPreserve = F)
   } else if (x_year_end == 2020) {
     spdf <- geojsonio::geojson_read(
-      system.file("extdata", "Fylker20.geojson", package = "fhidata"),
+      system.file("extdata", "Fylker20.geojson", package = "fhimaps"),
       what = "sp"
     )
-    spdf_simple <- rmapshaper::ms_simplify(spdf, keep = 0.1)
+    spdf$navn <- NULL
+    spdf_simple <- rgeos::gSimplify(spdf, tol=2000, topologyPreserve = F)
   }
 
+  if(return_sf){
+    spgeo <- sp::spTransform(spdf_simple, sp::CRS("+proj=longlat +datum=WGS84"))
+    x <- sf::st_as_sf(spgeo)
+    x$location_code <- sprintf("county%s", formatC(as.numeric(spdf$fylkesnummer), width = 2, flag = "0"))
+    return(x)
+  }
+
+  spdf_simple$fylkesnummer <- spdf$fylkesnummer
   spdf_fortified <- broom::tidy(spdf_simple, region = "fylkesnummer")
   setDT(spdf_fortified)
 
@@ -713,7 +797,7 @@ gen_norway_map_counties <- function(x_year_end, insert = FALSE, split = FALSE) {
   return(invisible(spdf_fortified))
 }
 
-gen_norway_map_municips <- function(x_year_end, insert = FALSE, split = FALSE) {
+gen_norway_map_municip <- function(x_year_end, insert = FALSE, split = FALSE, return_sf=FALSE) {
   stopifnot(x_year_end %in% c("2019", "2020"))
 
   . <- NULL
@@ -731,24 +815,36 @@ gen_norway_map_municips <- function(x_year_end, insert = FALSE, split = FALSE) {
 
   if (x_year_end == 2019) {
     spdf <- geojsonio::geojson_read(
-      system.file("extdata", "Kommuner19.geojson", package = "fhidata"),
+      system.file("extdata", "Kommuner19.geojson", package = "fhimaps"),
       what = "sp"
     )
-    spdf_simple <- rmapshaper::ms_simplify(rgeos::gBuffer(spdf, byid = TRUE, width = 0), keep = 0.075)
+    # spdf_simple <- rmapshaper::ms_simplify(rgeos::gBuffer(spdf, byid = TRUE, width = 0), keep = 0.075)
+    spdf_simple <- rgeos::gSimplify(spdf, tol=500, topologyPreserve = F)
+    # pryr::object_size(spdf_simple)
   } else if (x_year_end == 2020) {
     # spdf <- sf::st_read(
-    #   system.file("extdata", "Kommuner20.gml", package = "fhidata"),
+    #   system.file("extdata", "Kommuner20.gml", package = "fhimaps"),
     #   layer = "Kommune"
     # )
     # spdf_simple <- rmapshaper::ms_simplify(spdf, keep = 0.1)
     # spdf_simple <- methods::as(spdf_simple, "Spatial")
     spdf <- geojsonio::geojson_read(
-      system.file("extdata", "Kommuner20.geojson", package = "fhidata"),
+      system.file("extdata", "Kommuner20.geojson", package = "fhimaps"),
       what = "sp"
     )
-    spdf_simple <- rmapshaper::ms_simplify(rgeos::gBuffer(spdf, byid = TRUE, width = 0), keep = 0.075)
+    # spdf_simple <- rmapshaper::ms_simplify(rgeos::gBuffer(spdf, byid = TRUE, width = 0), keep = 0.075)
+    spdf_simple <- rgeos::gSimplify(spdf, tol=500, topologyPreserve = F)
+    # pryr::object_size(spdf_simple)
   }
 
+  if(return_sf){
+    spgeo <- sp::spTransform(spdf_simple, sp::CRS("+proj=longlat +datum=WGS84"))
+    x <- sf::st_as_sf(spgeo)
+    x$location_code <- sprintf("municip%s", formatC(as.numeric(spdf$kommunenummer), width = 4, flag = "0"))
+    return(x)
+  }
+
+  spdf_simple$kommunenummer <- spdf$kommunenummer
   spdf_fortified <- broom::tidy(spdf_simple, region = "kommunenummer")
 
   setDT(spdf_fortified)

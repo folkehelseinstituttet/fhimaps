@@ -43,7 +43,7 @@ gen_senorge <- function(norway_locations_current, norway_map_municips) {
   on.exit(fs::file_delete(temp_file))
 
   utils::download.file(
-    glue::glue("http://thredds.met.no/thredds/fileServer/senorge/seNorge_2018/Latest/{file}"),
+    glue::glue("https://thredds.met.no/thredds/fileServer/senorge/seNorge_2018/Latest/{file}"),
     temp_file
   )
 
@@ -61,24 +61,33 @@ gen_senorge <- function(norway_locations_current, norway_map_municips) {
 
   gps <- merge(dlong, dlat, by = c("row", "col"))
   gps[, location_code := as.character(NA)]
+  batches <- split_equal(1:nrow(gps), size = 10000)
+  for(i in seq_along(batches)) batches[[i]] <- rep(i, length=length(batches[[i]]))
+  batches <- unlist(batches)
+  gps[, batch := batches]
 
   for (i in norway_locations_current$municip_code) {
     message(i)
     # res <- SDMTools::pnt.in.poly(gps[, c("long", "lat")], norway_map_municips[location_code == i, c("long", "lat")])
-    res <- sp::point.in.polygon(
-      point.x = gps$long,
-      point.y = gps$lat,
-      pol.x = norway_map_municips[location_code == i]$long,
-      pol.y = norway_map_municips[location_code == i]$lat,
-    )
-    indexes <- which(res > 0)
-    gps[indexes, location_code := i]
+    for(j in unique(batches)){
+      res <- sp::point.in.polygon(
+        point.x = gps[batch==j]$long,
+        point.y = gps[batch==j]$lat,
+        pol.x = norway_map_municips[location_code == i]$long,
+        pol.y = norway_map_municips[location_code == i]$lat,
+      )
+      indexes <- which(res > 0)
+      gps[batch==j][indexes, location_code := i]
+    }
   }
 
-  gps[, year := 2019]
   gps[, long := NULL]
   gps[, lat := NULL]
   gps <- gps[!is.na(location_code)]
 
   return(invisible(gps))
+}
+
+split_equal <- function (x, size = 10){
+  split(x, ceiling(seq_along(x)/size))
 }
