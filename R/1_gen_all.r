@@ -69,6 +69,7 @@ gen_data_all <- function(base_loc) {
   norway_map_county_b2020 <- gen_norway_map_county(x_year_end=2020)
   save(norway_map_county_b2020, file=file.path("/git","/fhimaps","data","norway_map_county_b2020.rda"), compress = "xz")
   norway_map_municip_b2020_sf <-  gen_norway_map_municip(x_year_end=2020, return_sf = T)
+  # pryr::object_size(norway_map_municip_b2020_sf)
   save(norway_map_municip_b2020_sf, file=file.path("/git","/fhimaps","data","norway_map_municip_b2020_sf.rda"), compress = "xz")
   norway_map_municip_b2020 <-  gen_norway_map_municip(x_year_end=2020)
   save(norway_map_municip_b2020, file=file.path("/git","/fhimaps","data","norway_map_municip_b2020.rda"), compress = "xz")
@@ -78,13 +79,13 @@ gen_data_all <- function(base_loc) {
   norway_map_municip_with_insert_b2020 <-  gen_norway_map_municip(x_year_end=2020, insert = T)
   save(norway_map_municip_with_insert_b2020, file=file.path("/git","/fhimaps","data","norway_map_municip_with_insert_b2020.rda"), compress = "xz")
 
-  # senorge 2019 ----
-  load(file.path(base_loc,"norway_map_municip_b2019.rda"))
-  senorge_b2019 <- gen_senorge(norway_locations_current = fhidata::norway_locations_b2019, norway_map_municips = norway_map_municip_b2019)
-  save(senorge_b2019, file=file.path(base_loc,"senorge_b2019.rda"), compress = "xz")
-
-  # senorge 2020 ----
-  load(file.path(base_loc,"norway_map_municip_b2020.rda"))
-  senorge_b2020 <- gen_senorge(fhidata::norway_locations_b2020, norway_map_municip_b2020)
-  save(senorge_b2020, file=file.path(base_loc,"senorge_b2020.rda"), compress = "xz")
+  # # senorge 2019 ----
+  # load(file.path(base_loc,"norway_map_municip_b2019.rda"))
+  # senorge_b2019 <- gen_senorge(norway_locations_current = fhidata::norway_locations_b2019, norway_map_municips = norway_map_municip_b2019)
+  # save(senorge_b2019, file=file.path(base_loc,"senorge_b2019.rda"), compress = "xz")
+  #
+  # # senorge 2020 ----
+  # load(file.path(base_loc,"norway_map_municip_b2020.rda"))
+  # senorge_b2020 <- gen_senorge(fhidata::norway_locations_b2020, norway_map_municip_b2020)
+  # save(senorge_b2020, file=file.path(base_loc,"senorge_b2020.rda"), compress = "xz")
 }

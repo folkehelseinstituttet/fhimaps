@@ -797,7 +797,12 @@ gen_norway_map_county <- function(x_year_end, insert = FALSE, split = FALSE, ret
   return(invisible(spdf_fortified))
 }
 
-gen_norway_map_municip <- function(x_year_end, insert = FALSE, split = FALSE, return_sf=FALSE) {
+gen_norway_map_municip <- function(
+  x_year_end,
+  insert = FALSE,
+  split = FALSE,
+  return_sf=FALSE
+  ) {
   stopifnot(x_year_end %in% c("2019", "2020"))
 
   . <- NULL
@@ -813,27 +818,25 @@ gen_norway_map_municip <- function(x_year_end, insert = FALSE, split = FALSE, re
 
   require_namespace(c("geojsonio", "broom", "rmapshaper", "sp"))
 
+  if(return_sf){
+    tol <- 1300
+  } else {
+    tol <- 500
+  }
+
   if (x_year_end == 2019) {
     spdf <- geojsonio::geojson_read(
       system.file("extdata", "Kommuner19.geojson", package = "fhimaps"),
       what = "sp"
     )
-    # spdf_simple <- rmapshaper::ms_simplify(rgeos::gBuffer(spdf, byid = TRUE, width = 0), keep = 0.075)
-    spdf_simple <- rgeos::gSimplify(spdf, tol=500, topologyPreserve = F)
+    spdf_simple <- rgeos::gSimplify(spdf, tol=tol, topologyPreserve = F)
     # pryr::object_size(spdf_simple)
   } else if (x_year_end == 2020) {
-    # spdf <- sf::st_read(
-    #   system.file("extdata", "Kommuner20.gml", package = "fhimaps"),
-    #   layer = "Kommune"
-    # )
-    # spdf_simple <- rmapshaper::ms_simplify(spdf, keep = 0.1)
-    # spdf_simple <- methods::as(spdf_simple, "Spatial")
     spdf <- geojsonio::geojson_read(
       system.file("extdata", "Kommuner20.geojson", package = "fhimaps"),
       what = "sp"
     )
-    # spdf_simple <- rmapshaper::ms_simplify(rgeos::gBuffer(spdf, byid = TRUE, width = 0), keep = 0.075)
-    spdf_simple <- rgeos::gSimplify(spdf, tol=500, topologyPreserve = F)
+    spdf_simple <- rgeos::gSimplify(spdf, tol=tol, topologyPreserve = F)
     # pryr::object_size(spdf_simple)
   }
 

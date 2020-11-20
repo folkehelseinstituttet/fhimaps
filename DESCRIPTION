@@ -1,6 +1,6 @@
 Package: fhimaps
 Title: Preformated Maps That Don't Need Geo-Libraries
-Version: 2020.10.30
+Version: 2020.11.20
 Authors@R: person("Richard", "White", email = "hello@rwhite.no", role = c("aut", "cre"))
 Description: Preformatted mapping datasets that don't need geo-libraries.
 Depends: R (>= 3.5.0)
