@@ -79,6 +79,13 @@ gen_data_all <- function(base_loc) {
   norway_map_municip_with_insert_b2020 <-  gen_norway_map_municip(x_year_end=2020, insert = T)
   save(norway_map_municip_with_insert_b2020, file=file.path("/git","/fhimaps","data","norway_map_municip_with_insert_b2020.rda"), compress = "xz")
 
+  # ward oslo ----
+  oslo_map_ward_b2020_sf <- gen_oslo_map_ward(return_sf = T)
+  save(oslo_map_ward_b2020_sf, file=file.path("/git","/fhimaps","data","oslo_map_ward_b2020_sf.rda"), compress = "xz")
+  oslo_map_ward_b2020 <- gen_oslo_map_ward()
+  save(oslo_map_ward_b2020, file=file.path("/git","/fhimaps","data","oslo_map_ward_b2020.rda"), compress = "xz")
+
+
   # # senorge 2019 ----
   # load(file.path(base_loc,"norway_map_municip_b2019.rda"))
   # senorge_b2019 <- gen_senorge(norway_locations_current = fhidata::norway_locations_b2019, norway_map_municips = norway_map_municip_b2019)
