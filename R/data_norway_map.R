@@ -713,20 +713,20 @@ gen_norway_map_county <- function(x_year_end, insert = FALSE, split = FALSE, ret
 
   if (x_year_end == 2017) {
     spdf <- geojsonio::geojson_read(
-      system.file("extdata", "Fylker17.geojson", package = "fhimaps"),
+      system.file("rawdata", "Fylker17.geojson", package = "fhimaps"),
       what = "sp"
     )
     spdf_simple <- rgeos::gSimplify(spdf, tol=2000, topologyPreserve = F)
     # pryr::object_size(spdf_simple)
   } else if (x_year_end == 2019) {
     spdf <- geojsonio::geojson_read(
-      system.file("extdata", "Fylker19.geojson", package = "fhimaps"),
+      system.file("rawdata", "Fylker19.geojson", package = "fhimaps"),
       what = "sp"
     )
     spdf_simple <- rgeos::gSimplify(spdf, tol=2000, topologyPreserve = F)
   } else if (x_year_end == 2020) {
     spdf <- geojsonio::geojson_read(
-      system.file("extdata", "Fylker20.geojson", package = "fhimaps"),
+      system.file("rawdata", "Fylker20.geojson", package = "fhimaps"),
       what = "sp"
     )
     spdf$navn <- NULL
@@ -826,14 +826,14 @@ gen_norway_map_municip <- function(
 
   if (x_year_end == 2019) {
     spdf <- geojsonio::geojson_read(
-      system.file("extdata", "Kommuner19.geojson", package = "fhimaps"),
+      system.file("rawdata", "Kommuner19.geojson", package = "fhimaps"),
       what = "sp"
     )
     spdf_simple <- rgeos::gSimplify(spdf, tol=tol, topologyPreserve = F)
     # pryr::object_size(spdf_simple)
   } else if (x_year_end == 2020) {
     spdf <- geojsonio::geojson_read(
-      system.file("extdata", "Kommuner20.geojson", package = "fhimaps"),
+      system.file("rawdata", "Kommuner20.geojson", package = "fhimaps"),
       what = "sp"
     )
     spdf_simple <- rgeos::gSimplify(spdf, tol=tol, topologyPreserve = F)

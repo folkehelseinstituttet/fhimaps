@@ -2,7 +2,7 @@
 ^data-raw$
 ^Meta$
 ^doc$
-inst/extdata/Personer*
+inst/rawdata/*
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^.*\.git$
@@ -14,7 +14,7 @@ travis/*
 .gitignore
 R/.Rapp.history
 inst/.DS_Store
-inst/extdata
+inst/rawdata
 tests/.DS_Store
 tests/testthat/.DS_Store
 tests/testthat/data/.DS_Store

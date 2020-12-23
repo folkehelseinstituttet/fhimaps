@@ -1,8 +1,6 @@
 #!/bin/bash
 
 addToDrat(){
-
-
   ## Set up Repo parameters
   git init
   git config user.name "Richard White"
@@ -17,8 +15,6 @@ addToDrat(){
   Rscript -e "drat::insertPackage('$PKG_REPO/$PKG_TARBALL', \
     repodir = '.', \
     commit='Travis update $PKG_REPO: build $TRAVIS_BUILD_NUMBER')"
-  Rscript -e "saveRDS(read.dcf('src/contrib/PACKAGES'),'src/contrib/PACKAGES.rds')"
-  git commit -a -m "Travis update $PKG_REPO: build $TRAVIS_BUILD_NUMBER"
   git push 2>err.txt
 
 }

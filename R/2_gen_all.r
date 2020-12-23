@@ -15,12 +15,12 @@ gen_data_all <- function(base_loc) {
   norway_map_county_label_positions_b2020 <- gen_norway_map_county_label_positions(x_year_end = 2020)
   save(norway_map_county_label_positions_b2020, file = file.path(base_loc, "norway_map_county_label_positions_b2020.rda"), compress = "xz")
 
-  norway_map_insert_title_position_b2017 <- gen_norway_map_insert_title_position(x_year_end = 2017)
-  save(norway_map_insert_title_position_b2017, file = file.path(base_loc, "norway_map_insert_title_position_b2017.rda"), compress = "xz")
-  norway_map_insert_title_position_b2019 <- gen_norway_map_insert_title_position(x_year_end = 2019)
-  save(norway_map_insert_title_position_b2019, file = file.path(base_loc, "norway_map_insert_title_position_b2019.rda"), compress = "xz")
-  norway_map_insert_title_position_b2020 <- gen_norway_map_insert_title_position(x_year_end = 2020)
-  save(norway_map_insert_title_position_b2020, file = file.path(base_loc, "norway_map_insert_title_position_b2020.rda"), compress = "xz")
+  norway_map_osloinsert_title_position_b2017 <- gen_norway_map_osloinsert_title_position(x_year_end = 2017)
+  save(norway_map_osloinsert_title_position_b2017, file = file.path(base_loc, "norway_map_osloinsert_title_position_b2017.rda"), compress = "xz")
+  norway_map_osloinsert_title_position_b2019 <- gen_norway_map_osloinsert_title_position(x_year_end = 2019)
+  save(norway_map_osloinsert_title_position_b2019, file = file.path(base_loc, "norway_map_osloinsert_title_position_b2019.rda"), compress = "xz")
+  norway_map_osloinsert_title_position_b2020 <- gen_norway_map_osloinsert_title_position(x_year_end = 2020)
+  save(norway_map_osloinsert_title_position_b2020, file = file.path(base_loc, "norway_map_osloinsert_title_position_b2020.rda"), compress = "xz")
 
   # world_map <- gen_world_map()
   # save(world_map, file=file.path("/git","fhimaps","data","world_map.rda"), compress = "xz")
@@ -32,8 +32,8 @@ gen_data_all <- function(base_loc) {
   norway_map_county_b2017 <- gen_norway_map_county(x_year_end=2017)
   save(norway_map_county_b2017, file=file.path("/git","/fhimaps","data","norway_map_county_b2017.rda"), compress = "xz")
 
-  norway_map_county_with_insert_b2017 <- gen_norway_map_county(x_year_end=2017, insert = T)
-  save(norway_map_county_with_insert_b2017, file=file.path("/git","/fhimaps","data","norway_map_county_with_insert_b2017.rda"), compress = "xz")
+  norway_map_county_with_osloinsert_b2017 <- gen_norway_map_county(x_year_end=2017, insert = T)
+  save(norway_map_county_with_osloinsert_b2017, file=file.path("/git","/fhimaps","data","norway_map_county_with_osloinsert_b2017.rda"), compress = "xz")
 
   # norway 2019 ----
   # county
@@ -51,12 +51,12 @@ gen_data_all <- function(base_loc) {
   save(norway_map_municip_b2019, file=file.path("/git","/fhimaps","data","norway_map_municip_b2019.rda"), compress = "xz")
 
   # county with insert
-  norway_map_county_with_insert_b2019 <- gen_norway_map_county(x_year_end=2019, insert = T)
-  save(norway_map_county_with_insert_b2019, file=file.path("/git","/fhimaps","data","norway_map_county_with_insert_b2019.rda"), compress = "xz")
+  norway_map_county_with_osloinsert_b2019 <- gen_norway_map_county(x_year_end=2019, insert = T)
+  save(norway_map_county_with_osloinsert_b2019, file=file.path("/git","/fhimaps","data","norway_map_county_with_osloinsert_b2019.rda"), compress = "xz")
 
   # municip with insert
-  norway_map_municip_with_insert_b2019 <-  gen_norway_map_municip(x_year_end=2019, insert = T)
-  save(norway_map_municip_with_insert_b2019, file=file.path("/git","/fhimaps","data","norway_map_municip_with_insert_b2019.rda"), compress = "xz")
+  norway_map_municip_with_osloinsert_b2019 <-  gen_norway_map_municip(x_year_end=2019, insert = T)
+  save(norway_map_municip_with_osloinsert_b2019, file=file.path("/git","/fhimaps","data","norway_map_municip_with_osloinsert_b2019.rda"), compress = "xz")
 
   # norway 2020 ----
   norway_map_split_county_b2020 <- gen_norway_map_county(x_year_end=2020, split=T)
@@ -74,10 +74,10 @@ gen_data_all <- function(base_loc) {
   norway_map_municip_b2020 <-  gen_norway_map_municip(x_year_end=2020)
   save(norway_map_municip_b2020, file=file.path("/git","/fhimaps","data","norway_map_municip_b2020.rda"), compress = "xz")
 
-  norway_map_county_with_insert_b2020 <- gen_norway_map_county(x_year_end=2020, insert = T)
-  save(norway_map_county_with_insert_b2020, file=file.path("/git","/fhimaps","data","norway_map_county_with_insert_b2020.rda"), compress = "xz")
-  norway_map_municip_with_insert_b2020 <-  gen_norway_map_municip(x_year_end=2020, insert = T)
-  save(norway_map_municip_with_insert_b2020, file=file.path("/git","/fhimaps","data","norway_map_municip_with_insert_b2020.rda"), compress = "xz")
+  norway_map_county_with_osloinsert_b2020 <- gen_norway_map_county(x_year_end=2020, insert = T)
+  save(norway_map_county_with_osloinsert_b2020, file=file.path("/git","/fhimaps","data","norway_map_county_with_osloinsert_b2020.rda"), compress = "xz")
+  norway_map_municip_with_osloinsert_b2020 <-  gen_norway_map_municip(x_year_end=2020, insert = T)
+  save(norway_map_municip_with_osloinsert_b2020, file=file.path("/git","/fhimaps","data","norway_map_municip_with_osloinsert_b2020.rda"), compress = "xz")
 
   # ward oslo ----
   oslo_map_ward_b2020_sf <- gen_oslo_map_ward(return_sf = T)

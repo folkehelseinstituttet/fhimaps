@@ -79,7 +79,7 @@
 #   location_name_english <- NULL
 #
 #   iso3 <- readxl::read_excel(system.file(
-#     "extdata",
+#     "rawdata",
 #     "iso3.xlsx",
 #     package = "fhimaps"
 #   ))
@@ -90,7 +90,7 @@
 #
 #   spdf <- sf::read_sf(
 #     system.file(
-#       "extdata",
+#       "rawdata",
 #       "CNTR_RG_01M_2016_4326",
 #       "CNTR_RG_01M_2016_4326.shp",
 #       package = "fhimaps"

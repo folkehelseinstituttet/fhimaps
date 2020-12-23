@@ -56,7 +56,7 @@ gen_oslo_map_ward <- function(return_sf=FALSE) {
 
 
   d <- sf::read_sf(
-    system.file("extdata", "Bydel_Oslo", "Bydeler.shp", package = "fhimaps")
+    system.file("rawdata", "Bydel_Oslo", "Bydeler.shp", package = "fhimaps")
   )
 
   # drop Z dimension, make into sp
