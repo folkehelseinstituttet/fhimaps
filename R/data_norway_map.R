@@ -167,7 +167,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_county_with_insert_b2020,
+#'   data = fhimaps::norway_map_county_with_osloinsert_b2020,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -175,7 +175,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_county_with_insert_b2020"
+"norway_map_county_with_osloinsert_b2020"
 
 #' Maps of Norwegian municipalities with insert (2020 borders)
 #'
@@ -196,7 +196,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_municip_with_insert_b2020,
+#'   data = fhimaps::norway_map_municip_with_osloinsert_b2020,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -204,7 +204,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_municip_with_insert_b2020"
+"norway_map_municip_with_osloinsert_b2020"
 
 ###### 2019 WITHOUT INSERTS
 
@@ -317,7 +317,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_county_with_insert_b2019,
+#'   data = fhimaps::norway_map_county_with_osloinsert_b2019,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -325,7 +325,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_county_with_insert_b2019"
+"norway_map_county_with_osloinsert_b2019"
 
 #' Maps of Norwegian municipalities with insert (2019 borders)
 #'
@@ -346,7 +346,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_municip_with_insert_b2019,
+#'   data = fhimaps::norway_map_municip_with_osloinsert_b2019,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -354,7 +354,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_municip_with_insert_b2019"
+"norway_map_municip_with_osloinsert_b2019"
 
 ###### 2017 WITHOUT INSERTS
 
@@ -417,11 +417,11 @@
 #' @examples
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
-#' q <- q + geom_polygon(data = fhimaps::norway_map_county_with_insert_b2017, color = "black", fill = "white", size = 0.2)
+#' q <- q + geom_polygon(data = fhimaps::norway_map_county_with_osloinsert_b2017, color = "black", fill = "white", size = 0.2)
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_county_with_insert_b2017"
+"norway_map_county_with_osloinsert_b2017"
 
 #### LABEL POSITIONS
 
@@ -527,7 +527,7 @@
 #' }
 #' @examples
 #' library(ggplot2)
-#' pd <- fhimaps::norway_map_county_with_insert_b2020
+#' pd <- fhimaps::norway_map_county_with_osloinsert_b2020
 #' q <- ggplot()
 #' q <- q + geom_polygon(
 #'   data = pd,
@@ -538,14 +538,14 @@
 #' )
 #' q <- q + annotate(
 #'   "text",
-#'   x = fhimaps::norway_map_insert_title_position_b2020$long,
-#'   y = fhimaps::norway_map_insert_title_position_b2020$lat,
+#'   x = fhimaps::norway_map_osloinsert_title_position_b2020$long,
+#'   y = fhimaps::norway_map_osloinsert_title_position_b2020$lat,
 #'   label = "Oslo"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_insert_title_position_b2020"
+"norway_map_osloinsert_title_position_b2020"
 
 #' Title Positions for Inserts (2019 borders)
 #'
@@ -558,7 +558,7 @@
 #' }
 #' @examples
 #' library(ggplot2)
-#' pd <- fhimaps::norway_map_county_with_insert_b2019
+#' pd <- fhimaps::norway_map_county_with_osloinsert_b2019
 #' q <- ggplot()
 #' q <- q + geom_polygon(
 #'   data = pd,
@@ -569,14 +569,14 @@
 #' )
 #' q <- q + annotate(
 #'   "text",
-#'   x = fhimaps::norway_map_county_with_insert_b2019$long,
-#'   y = fhimaps::norway_map_county_with_insert_b2019$lat,
+#'   x = fhimaps::norway_map_county_with_osloinsert_b2019$long,
+#'   y = fhimaps::norway_map_county_with_osloinsert_b2019$lat,
 #'   label = "Oslo"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_insert_title_position_b2019"
+"norway_map_osloinsert_title_position_b2019"
 
 #' Title Positions for Inserts (2017 borders)
 #'
@@ -589,7 +589,7 @@
 #' }
 #' @examples
 #' library(ggplot2)
-#' pd <- fhimaps::norway_map_county_with_insert_b2017
+#' pd <- fhimaps::norway_map_county_with_osloinsert_b2017
 #' q <- ggplot()
 #' q <- q + geom_polygon(
 #'   data = pd,
@@ -600,14 +600,14 @@
 #' )
 #' q <- q + annotate(
 #'   "text",
-#'   x = fhimaps::norway_map_county_with_insert_b2017$long,
-#'   y = fhimaps::norway_map_county_with_insert_b2017$lat,
+#'   x = fhimaps::norway_map_county_with_osloinsert_b2017$long,
+#'   y = fhimaps::norway_map_county_with_osloinsert_b2017$lat,
 #'   label = "Oslo"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_insert_title_position_b2017"
+"norway_map_osloinsert_title_position_b2017"
 
 gen_norway_map_county_label_positions <- function(x_year_end) {
   stopifnot(x_year_end %in% c("2017", "2019", "2020"))
@@ -680,7 +680,7 @@ gen_norway_map_county_label_positions <- function(x_year_end) {
   return(label_positions)
 }
 
-gen_norway_map_insert_title_position <- function(x_year_end) {
+gen_norway_map_osloinsert_title_position <- function(x_year_end) {
   stopifnot(x_year_end %in% c("2017", "2019", "2020"))
 
   label_positions <- data.table(

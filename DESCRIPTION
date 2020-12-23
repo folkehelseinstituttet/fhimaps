@@ -1,6 +1,6 @@
 Package: fhimaps
 Title: Norwegian Preformated Maps That Don't Need Geo-Libraries
-Version: 2020.11.20
+Version: 1.0.0
 Authors@R: person("Richard", "White", email = "hello@rwhite.no", role = c("aut", "cre"))
 Description: Preformatted mapping datasets that don't need geo-libraries.
 Depends: R (>= 3.5.0)
