@@ -3,8 +3,8 @@ cache:
 - packages
 
 repos:
-  CRAN: https://cloud.r-project.org
   folkehelseinstituttet: https://folkehelseinstituttet.github.io/drat/
+  CRAN: https://cloud.r-project.org
 
 addons:
   apt:

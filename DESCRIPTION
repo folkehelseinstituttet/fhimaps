@@ -7,7 +7,8 @@ Depends: R (>= 3.5.0)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: data.table
+Imports: data.table,
+    fhidata
 Suggests: testthat,
     knitr,
     rmarkdown,
@@ -30,7 +31,6 @@ Suggests: testthat,
     ncdf4,
     reshape2,
     sf,
-    methods,
-    fhidata
+    methods
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
