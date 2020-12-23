@@ -391,7 +391,12 @@
 #' @examples
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
-#' q <- q + geom_polygon(data = fhimaps::norway_map_county_b2017, color = "black", fill = "white", size = 0.2)
+#' q <- q + geom_polygon(
+#'   data = fhimaps::norway_map_county_b2017,
+#'   color = "black",
+#'   fill = "white",
+#'   size = 0.2
+#'  )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
@@ -417,7 +422,12 @@
 #' @examples
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
-#' q <- q + geom_polygon(data = fhimaps::norway_map_county_with_osloinsert_b2017, color = "black", fill = "white", size = 0.2)
+#' q <- q + geom_polygon(
+#'   data = fhimaps::norway_map_county_with_osloinsert_b2017,
+#'   color = "black",
+#'   fill = "white",
+#'   size = 0.2
+#' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
@@ -710,6 +720,8 @@ gen_norway_map_county <- function(x_year_end, insert = FALSE, split = FALSE, ret
   group <- NULL
   hole <- NULL
   piece <- NULL
+  long_diff <- NULL
+  lat_diff <- NULL
 
   if (x_year_end == 2017) {
     spdf <- geojsonio::geojson_read(
@@ -815,6 +827,8 @@ gen_norway_map_municip <- function(
   group <- NULL
   hole <- NULL
   piece <- NULL
+  long_diff <- NULL
+  lat_diff <- NULL
 
   require_namespace(c("geojsonio", "broom", "rmapshaper", "sp"))
 

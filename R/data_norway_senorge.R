@@ -31,6 +31,7 @@ gen_senorge <- function(norway_locations_current, norway_map_municips) {
   location_code <- NULL
   long <- NULL
   lat <- NULL
+  batch <- NULL
 
   require_namespace(c("ncdf4"))
 

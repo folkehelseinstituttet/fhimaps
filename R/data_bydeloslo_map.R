@@ -61,7 +61,7 @@ gen_oslo_map_ward <- function(return_sf=FALSE) {
 
   # drop Z dimension, make into sp
   d <- sf::st_zm(d)
-  spdf <- as(d, "Spatial")
+  spdf <- methods::as(d, "Spatial")
 
   # simplify
   spdf$BYDELSNAVN <- NULL
