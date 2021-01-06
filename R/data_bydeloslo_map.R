@@ -16,7 +16,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::oslo_map_ward_b2020,
+#'   data = fhimaps::oslo_level_ward_map_b2020,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -24,7 +24,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"oslo_map_ward_b2020"
+"oslo_level_ward_map_b2020"
 
 
 
@@ -40,10 +40,10 @@
 #' \item{group}{Needs to be used as 'group' aesthetic in ggplot2.}
 #' \item{location_code}{Location code (ward code).}
 #' }
-"oslo_map_ward_b2020_sf"
+"oslo_level_ward_map_b2020_sf"
 
 
-gen_oslo_map_ward <- function(return_sf=FALSE) {
+gen_oslo_level_ward_map <- function(return_sf=FALSE) {
 
   . <- NULL
   id <- NULL

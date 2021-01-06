@@ -18,7 +18,7 @@ GPS coordinates for inserts for Norwegian maps
 }
 \examples{
 library(ggplot2)
-pd <- fhimaps::norway_map_county_with_osloinsert_b2019
+pd <- fhimaps::norway_level_nuts3_map_with_osloinsert_b2019
 q <- ggplot()
 q <- q + geom_polygon(
   data = pd,
@@ -29,8 +29,8 @@ q <- q + geom_polygon(
 )
 q <- q + annotate(
   "text",
-  x = fhimaps::norway_map_county_with_osloinsert_b2019$long,
-  y = fhimaps::norway_map_county_with_osloinsert_b2019$lat,
+  x = fhimaps::norway_level_nuts3_map_with_osloinsert_b2019$long,
+  y = fhimaps::norway_level_nuts3_map_with_osloinsert_b2019$lat,
   label = "Oslo"
 )
 q <- q + theme_void()
