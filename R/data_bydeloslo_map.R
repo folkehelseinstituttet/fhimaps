@@ -24,7 +24,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"oslo_level_ward_map_b2020"
+"oslo_ward_map_b2020_default_dt"
 
 
 
@@ -40,10 +40,10 @@
 #' \item{group}{Needs to be used as 'group' aesthetic in ggplot2.}
 #' \item{location_code}{Location code (ward code).}
 #' }
-"oslo_level_ward_map_b2020_sf"
+"oslo_ward_map_b2020_default_sf"
 
 
-gen_oslo_level_ward_map <- function(return_sf=FALSE) {
+gen_oslo_ward_map <- function(return_sf=FALSE) {
 
   . <- NULL
   id <- NULL
