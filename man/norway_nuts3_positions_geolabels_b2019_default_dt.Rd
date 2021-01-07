@@ -21,12 +21,7 @@ GPS coordinates for labels for Norwegian county
 library(ggplot2)
 q <- ggplot(mapping = aes(x = long, y = lat))
 q <- q + geom_polygon(
-  data = fhimaps::norway_level_nuts3_map_b2019,
-  mapping = aes(group = group),
-  color = "black",
-  fill = "white",
-  size = 0.2
-)
+  data = fhimaps::norway_nuts3_map_b2019_default_dt)
 q <- q + geom_text(
   data = fhimaps::norway_nuts3_positions_geolabels_b2019_default_dt,
   mapping = aes(label = location_code),

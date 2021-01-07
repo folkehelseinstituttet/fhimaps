@@ -25,7 +25,7 @@ libraries. This data is licensed under Creative Commons BY 4.0 (CC BY 4.0).
 library(ggplot2)
 q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 q <- q + geom_polygon(
-  data = fhimaps::oslo_level_ward_map_b2020,
+  data = fhimaps::oslo_ward_map_b2020_default_dt,
   color = "black",
   fill = "white",
   size = 0.2
