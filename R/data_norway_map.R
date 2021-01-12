@@ -18,7 +18,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_split_county_b2020,
+#'   data = fhimaps::norway_nuts3_map_b2020_split_dt,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -26,7 +26,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_split_county_b2020"
+"norway_nuts3_map_b2020_split_dt"
 
 #' Split map of Norwegian Municipalities (2020 borders)
 #'
@@ -47,7 +47,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_split_municip_b2020,
+#'   data = fhimaps::norway_lau2_map_b2020_split_dt,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -55,7 +55,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_split_municip_b2020"
+"norway_lau2_map_b2020_split_dt"
 
 ###### 2020 WITHOUT INSERTS
 
@@ -71,7 +71,9 @@
 #' \item{location_code}{Location code (county code).}
 #' }
 #' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
-"norway_map_county_b2020_sf"
+"norway_nuts3_map_b2020_default_sf"
+
+
 
 #' Maps of Norwegian county (2020 borders)
 #'
@@ -92,7 +94,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_county_b2020,
+#'   data = fhimaps::norway_nuts3_map_b2020_default_dt,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -100,7 +102,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_county_b2020"
+"norway_nuts3_map_b2020_default_dt"
 
 #' Maps of Norwegian Municipalities (2020 borders) in sf format
 #'
@@ -115,7 +117,7 @@
 #' \item{location_code}{Location code (municipality code).}
 #' }
 #' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
-"norway_map_municip_b2020_sf"
+"norway_lau2_map_b2020_default_sf"
 
 #' Maps of Norwegian Municipalities (2020 borders)
 #'
@@ -136,7 +138,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_municip_b2020,
+#'   data = fhimaps::norway_lau2_map_b2020_default_dt,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -144,7 +146,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_municip_b2020"
+"norway_lau2_map_b2020_default_dt"
 
 ###### 2020 WITH INSERTS
 
@@ -167,7 +169,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_county_with_osloinsert_b2020,
+#'   data = fhimaps::norway_nuts3_map_b2020_insert_oslo_dt,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -175,7 +177,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_county_with_osloinsert_b2020"
+"norway_nuts3_map_b2020_insert_oslo_dt"
 
 #' Maps of Norwegian municipalities with insert (2020 borders)
 #'
@@ -196,7 +198,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_municip_with_osloinsert_b2020,
+#'   data = fhimaps::norway_lau2_map_b2020_insert_oslo_dt,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -204,7 +206,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_municip_with_osloinsert_b2020"
+"norway_lau2_map_b2020_insert_oslo_dt"
 
 ###### 2019 WITHOUT INSERTS
 
@@ -221,7 +223,7 @@
 #' \item{location_code}{Location code (county code).}
 #' }
 #' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
-"norway_map_county_b2019_sf"
+"norway_nuts3_map_b2019_default_sf"
 
 #' Maps of Norwegian county (2019 borders)
 #'
@@ -242,7 +244,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_county_b2019,
+#'   data = fhimaps::norway_nuts3_map_b2019_default_dt,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -250,7 +252,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_county_b2019"
+"norway_nuts3_map_b2019_default_dt"
 
 #' Maps of Norwegian Municipalities (2019 borders) in sf format
 #'
@@ -265,7 +267,7 @@
 #' \item{location_code}{Location code (municipality code).}
 #' }
 #' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
-"norway_map_municip_b2019_sf"
+"norway_lau2_map_b2019_default_sf"
 
 #' Maps of Norwegian Municipalities (2019 borders)
 #'
@@ -286,7 +288,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_municip_b2019,
+#'   data = fhimaps::norway_lau2_map_b2019_default_dt,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -294,7 +296,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_municip_b2019"
+"norway_lau2_map_b2019_default_dt"
 
 ###### 2019 WITH INSERTS
 
@@ -317,7 +319,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_county_with_osloinsert_b2019,
+#'   data = fhimaps::norway_nuts3_map_b2019_insert_oslo_dt,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -325,7 +327,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_county_with_osloinsert_b2019"
+"norway_nuts3_map_b2019_insert_oslo_dt"
 
 #' Maps of Norwegian municipalities with insert (2019 borders)
 #'
@@ -346,7 +348,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_municip_with_osloinsert_b2019,
+#'   data = fhimaps::norway_lau2_map_b2019_insert_oslo_dt,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -354,7 +356,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_municip_with_osloinsert_b2019"
+"norway_lau2_map_b2019_insert_oslo_dt"
 
 ###### 2017 WITHOUT INSERTS
 
@@ -371,7 +373,7 @@
 #' \item{location_code}{Location code (county code).}
 #' }
 #' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
-"norway_map_county_b2017_sf"
+"norway_nuts3_map_b2017_default_sf"
 
 #' Maps of Norwegian county (2017 borders)
 #'
@@ -392,7 +394,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_county_b2017,
+#'   data = fhimaps::norway_nuts3_map_b2017_default_dt,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -400,7 +402,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_county_b2017"
+"norway_nuts3_map_b2017_default_dt"
 
 ###### 2017 WITH INSERTS
 
@@ -423,7 +425,7 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_county_with_osloinsert_b2017,
+#'   data = fhimaps::norway_nuts3_map_b2017_insert_oslo_dt,
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -431,7 +433,7 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_county_with_osloinsert_b2017"
+"norway_nuts3_map_b2017_insert_oslo_dt"
 
 #### LABEL POSITIONS
 
@@ -449,20 +451,20 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_county_b2020,
+#'   data = fhimaps::norway_nuts3_map_b2020_default_dt,
 #'   mapping = aes(group = group),
 #'   color = "black",
 #'   fill = "white"
 #' )
 #' q <- q + geom_text(
-#'   data = fhimaps::norway_map_county_label_positions_b2020,
+#'   data = fhimaps::norway_nuts3_positions_geolabels_b2020_default_dt,
 #'   mapping = aes(label = location_code),
 #'   color = "red"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_county_label_positions_b2020"
+"norway_nuts3_positions_geolabels_b2020_default_dt"
 
 #' Label Positions for Norwegian county (2019 borders)
 #'
@@ -478,21 +480,16 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_county_b2019,
-#'   mapping = aes(group = group),
-#'   color = "black",
-#'   fill = "white",
-#'   size = 0.2
-#' )
+#'   data = fhimaps::norway_nuts3_map_b2019_default_dt)
 #' q <- q + geom_text(
-#'   data = fhimaps::norway_map_county_label_positions_b2019,
+#'   data = fhimaps::norway_nuts3_positions_geolabels_b2019_default_dt,
 #'   mapping = aes(label = location_code),
 #'   color = "red"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_county_label_positions_b2019"
+"norway_nuts3_positions_geolabels_b2019_default_dt"
 
 #' Label Positions for Norwegian county (2017 borders)
 #'
@@ -508,21 +505,21 @@
 #' library(ggplot2)
 #' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
-#'   data = fhimaps::norway_map_county_b2017,
+#'   data = fhimaps::norway_nuts3_map_b2017_default_dt,
 #'   mapping = aes(group = group),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
 #' )
 #' q <- q + geom_text(
-#'   data = fhimaps::norway_map_county_label_positions_b2017,
+#'   data = fhimaps::norway_nuts3_positions_geolabels_b2017_default_dt,
 #'   mapping = aes(label = location_code),
 #'   color = "red"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_county_label_positions_b2017"
+"norway_nuts3_positions_geolabels_b2017_default_dt"
 
 #### TITLE POSITIONS
 
@@ -537,7 +534,7 @@
 #' }
 #' @examples
 #' library(ggplot2)
-#' pd <- fhimaps::norway_map_county_with_osloinsert_b2020
+#' pd <- fhimaps::norway_nuts3_map_b2020_insert_oslo_dt
 #' q <- ggplot()
 #' q <- q + geom_polygon(
 #'   data = pd,
@@ -548,14 +545,14 @@
 #' )
 #' q <- q + annotate(
 #'   "text",
-#'   x = fhimaps::norway_map_osloinsert_title_position_b2020$long,
-#'   y = fhimaps::norway_map_osloinsert_title_position_b2020$lat,
+#'   x = fhimaps::norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt$long,
+#'   y = fhimaps::norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt$lat,
 #'   label = "Oslo"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_osloinsert_title_position_b2020"
+"norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt"
 
 #' Title Positions for Inserts (2019 borders)
 #'
@@ -568,7 +565,7 @@
 #' }
 #' @examples
 #' library(ggplot2)
-#' pd <- fhimaps::norway_map_county_with_osloinsert_b2019
+#' pd <- fhimaps::norway_nuts3_map_b2019_insert_oslo_dt
 #' q <- ggplot()
 #' q <- q + geom_polygon(
 #'   data = pd,
@@ -579,14 +576,14 @@
 #' )
 #' q <- q + annotate(
 #'   "text",
-#'   x = fhimaps::norway_map_county_with_osloinsert_b2019$long,
-#'   y = fhimaps::norway_map_county_with_osloinsert_b2019$lat,
+#'   x = fhimaps::norway_xxx_position_title_insert_oslo_b2019_insert_oslo_dt$long,
+#'   y = fhimaps::norway_xxx_position_title_insert_oslo_b2019_insert_oslo_dt$lat,
 #'   label = "Oslo"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_osloinsert_title_position_b2019"
+"norway_xxx_position_title_insert_oslo_b2019_insert_oslo_dt"
 
 #' Title Positions for Inserts (2017 borders)
 #'
@@ -599,7 +596,7 @@
 #' }
 #' @examples
 #' library(ggplot2)
-#' pd <- fhimaps::norway_map_county_with_osloinsert_b2017
+#' pd <- fhimaps::norway_nuts3_map_b2017_insert_oslo_dt
 #' q <- ggplot()
 #' q <- q + geom_polygon(
 #'   data = pd,
@@ -610,16 +607,22 @@
 #' )
 #' q <- q + annotate(
 #'   "text",
-#'   x = fhimaps::norway_map_county_with_osloinsert_b2017$long,
-#'   y = fhimaps::norway_map_county_with_osloinsert_b2017$lat,
+#'   x = fhimaps::norway_xxx_position_title_insert_oslo_b2017_insert_oslo_dt$long,
+#'   y = fhimaps::norway_xxx_position_title_insert_oslo_b2017_insert_oslo_dt$lat,
 #'   label = "Oslo"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_map_osloinsert_title_position_b2017"
+"norway_xxx_position_title_insert_oslo_b2017_insert_oslo_dt"
 
-gen_norway_map_county_label_positions <- function(x_year_end) {
+
+
+
+
+
+
+gen_norway_nuts3_position_geolabels <- function(x_year_end) {
   stopifnot(x_year_end %in% c("2017", "2019", "2020"))
 
   if (x_year_end == 2017) {
@@ -690,7 +693,11 @@ gen_norway_map_county_label_positions <- function(x_year_end) {
   return(label_positions)
 }
 
-gen_norway_map_osloinsert_title_position <- function(x_year_end) {
+
+
+
+
+gen_norway_xxx_position_title_insert_oslo <- function(x_year_end) {
   stopifnot(x_year_end %in% c("2017", "2019", "2020"))
 
   label_positions <- data.table(
@@ -707,7 +714,7 @@ gen_norway_map_osloinsert_title_position <- function(x_year_end) {
 
 # insert for oslo/akershus?
 # split the country in 2?
-gen_norway_map_county <- function(x_year_end, insert = FALSE, split = FALSE, return_sf=FALSE) {
+gen_norway_nuts3_map <- function(x_year_end, insert = FALSE, split = FALSE, return_sf=FALSE) {
   stopifnot(x_year_end %in% c("2017", "2019", "2020"))
 
   . <- NULL
@@ -809,7 +816,7 @@ gen_norway_map_county <- function(x_year_end, insert = FALSE, split = FALSE, ret
   return(invisible(spdf_fortified))
 }
 
-gen_norway_map_municip <- function(
+gen_norway_lau2_map <- function(
   x_year_end,
   insert = FALSE,
   split = FALSE,
