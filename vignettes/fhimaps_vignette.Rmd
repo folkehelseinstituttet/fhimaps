@@ -1,0 +1,53 @@
+---
+title: "fhimaps"
+output: rmarkdown::html_vignette
+author: "Richard Aubrey White, Chi Zhang"
+date: "2021-01-15"
+vignette: >
+  %\VignetteIndexEntry{fhimaps_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+
+# Introduction to `fhimaps`
+
+How we name things, what is available
+
+
+
+```{r echo = F, results='asis'}
+tb <- readxl::read_xlsx(system.file("rawdata", "fhimaps_ref.xlsx", package = "fhimaps"))
+knitr::kable(tb)
+```
+
+
+# Examples
+
+```{r setup}
+library(fhimaps)
+```
+
+
+## different maps (default, insert, ... )
+
+
+
+
+## customise the maps (color, label)
+
+ 
+
+
+
+
+
+
