@@ -145,7 +145,7 @@ gen_oslo_ward_position_geolabels <- function(x_year_end) {
   # d_oslo[, mean_lat := mean(lat), by = location_code]
   # d_oslo_label <- d_oslo[, .(location_code, mean_long, mean_lat)] %>% unique
 
-  stopifnot(x_year_end != "2020")
+  stopifnot(x_year_end == 2020)
 
   label_positions <- data.table(
     location_code = c(
@@ -175,9 +175,6 @@ gen_oslo_ward_position_geolabels <- function(x_year_end) {
 
   return(label_positions)
 }
-
-
-
 
 
 
