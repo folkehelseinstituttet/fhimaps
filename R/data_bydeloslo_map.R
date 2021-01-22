@@ -43,6 +43,37 @@
 "oslo_ward_map_b2020_default_sf"
 
 
+#' Label Positions for Oslo wards (2020 borders)
+#'
+#' GPS coordinates for labels for Oslo wards
+#'
+#' @format
+#' \describe{
+#' \item{location_code}{Location code (ward code).}
+#' \item{long}{Location code.}
+#' \item{lat}{Location name.}
+#' }
+#' @examples
+#' library(ggplot2)
+#' q <- ggplot(mapping = aes(x = long, y = lat))
+#' q <- q + geom_polygon(
+#'   data = fhimaps::oslo_ward_map_b2020_default_dt,
+#'   mapping = aes(group = group),
+#'   color = "black",
+#'   fill = "white",
+#'   size = 0.2
+#' )
+#' q <- q + geom_text(
+#'   data = fhimaps::oslo_ward_positions_geolabels_b2020_default_dt,
+#'   mapping = aes(label = location_code),
+#'   color = "red"
+#' )
+#' q <- q + theme_void()
+#' q <- q + coord_quickmap()
+#' q
+"oslo_ward_positions_geolabels_b2020_default_dt"
+
+
 gen_oslo_ward_map <- function(return_sf=FALSE) {
 
   . <- NULL
@@ -105,5 +136,48 @@ gen_oslo_ward_map <- function(return_sf=FALSE) {
 
   return(invisible(spdf_fortified))
 }
+
+
+gen_oslo_ward_position_geolabels <- function(x_year_end) {
+
+  # d_oslo <- fhimaps::oslo_ward_map_b2020_default_dt
+  # d_oslo[, mean_long := mean(long), by = location_code]
+  # d_oslo[, mean_lat := mean(lat), by = location_code]
+  # d_oslo_label <- d_oslo[, .(location_code, mean_long, mean_lat)] %>% unique
+
+  stopifnot(x_year_end != "2020")
+
+  label_positions <- data.table(
+    location_code = c(
+      "wardoslo030101", "wardoslo030102", "wardoslo030103",
+      "wardoslo030104", "wardoslo030105", "wardoslo030106",
+      "wardoslo030107", "wardoslo030108", "wardoslo030109",
+      "wardoslo030110", "wardoslo030111", "wardoslo030112",
+      "wardoslo030113", "wardoslo030114", "wardoslo030115"
+    ),
+    long = c(
+      10.77076, 10.77518, 10.76383,
+      10.73555, 10.70443, 10.65910,
+      10.66882, 10.75822, 10.82681,
+      10.88254, 10.92289, 10.87209,
+      10.84233, 10.79450, 10.82684
+    ),
+
+    lat = c(
+      59.90634, 59.92367, 59.93981,
+      59.92530, 59.91825, 59.92892,
+      59.95663, 59.95677, 59.94436,
+      59.96523, 59.95431, 59.92764,
+      59.88955, 59.86403, 59.83747
+    )
+  )
+
+
+  return(label_positions)
+}
+
+
+
+
 
 
