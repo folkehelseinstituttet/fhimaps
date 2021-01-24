@@ -34,7 +34,8 @@ Suggests: testthat,
     ncdf4,
     reshape2,
     sf,
-    methods
+    methods,
+    ggrepel
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 Additional_repositories: https://folkehelseinstituttet.github.io/drat/
