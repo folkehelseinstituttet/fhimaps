@@ -96,7 +96,8 @@ gen_data_all <- function(base_loc) {
   save(oslo_ward_map_b2020_default_sf, file=file.path("/git","/fhimaps","data","oslo_ward_map_b2020_default_sf.rda"), compress = "xz")
   oslo_ward_map_b2020_default_dt <- gen_oslo_ward_map()
   save(oslo_ward_map_b2020_default_dt, file=file.path("/git","/fhimaps","data","oslo_ward_map_b2020_default_dt.rda"), compress = "xz")
-
+  oslo_ward_positions_geolabels_b2020_default_dt <- gen_oslo_ward_position_geolabels(x_year_end = 2020)
+  save(oslo_ward_positions_geolabels_b2020_default_dt, file = file.path("/git","/fhimaps","data","oslo_ward_positions_geolabels_b2020_default_dt.rda"), compress = "xz")
 
   # # senorge 2019 ----
   # load(file.path(base_loc,"norway_level_lau2_map_b2019.rda"))
