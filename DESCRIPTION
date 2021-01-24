@@ -11,9 +11,9 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: data.table,
-    fhidata,
     utils
 Suggests: testthat,
+    fhidata,
     knitr,
     rmarkdown,
     geojsonio,
@@ -35,7 +35,8 @@ Suggests: testthat,
     reshape2,
     sf,
     methods,
-    ggrepel
+    ggrepel,
+    leaflet
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 Additional_repositories: https://folkehelseinstituttet.github.io/drat/
