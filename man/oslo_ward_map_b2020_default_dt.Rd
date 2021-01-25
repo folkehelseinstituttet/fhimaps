@@ -3,6 +3,7 @@
 \docType{data}
 \name{oslo_ward_map_b2020_default_dt}
 \alias{oslo_ward_map_b2020_default_dt}
+\alias{oslo_ward_position_geolabels_b2020_default_dt}
 \title{Maps of Oslo bydels (wards) (2020 borders)}
 \format{
 \describe{
@@ -12,9 +13,13 @@
 \item{group}{Needs to be used as 'group' aesthetic in ggplot2.}
 \item{location_code}{Location code (ward code).}
 }
+
+An object of class \code{data.table} (inherits from \code{data.frame}) with 15 rows and 3 columns.
 }
 \usage{
 oslo_ward_map_b2020_default_dt
+
+oslo_ward_position_geolabels_b2020_default_dt
 }
 \description{
 We conveniently package map datasets for Oslo bydels (wards)
@@ -29,6 +34,11 @@ q <- q + geom_polygon(
   color = "black",
   fill = "white",
   size = 0.2
+)
+q <- q + geom_text(
+  data = fhimaps::oslo_ward_position_geolabels_b2020_default_dt,
+  mapping = aes(label = location_code),
+  color = "red"
 )
 q <- q + theme_void()
 q <- q + coord_quickmap()
