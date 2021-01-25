@@ -7,32 +7,26 @@ reference:
 - title: Maps with 2020 borders
 - subtitle: Default
 - contents:
-  - matches("2020_default")
-  - -matches("senorge")
+  - matches("2020\\_default")
 - subtitle: With an insert for Oslo
 - contents:
-  - matches("2020_split")
-  - -matches("senorge")
+  - matches("2020\\_split")
 - subtitle: Split in two
 - contents:
-  - matches("2020_default")
-  - -matches("senorge")
+  - matches("2020\\_default")
 
 - title: Maps with 2019 borders
 - subtitle: Default
 - contents:
-  - matches("2019_default")
-  - -matches("senorge")
+  - matches("2019\\_default")
 - subtitle: With an insert for Oslo
 - contents:
-  - matches("2019_split")
-  - -matches("senorge")
+  - matches("2019\\_split")
 
 - title: Maps with 2017 borders
 - subtitle: Default
 - contents:
-  - matches("2017_default")
-  - -matches("senorge")
+  - matches("201\\7_default")
 
 - title: Miscellaneous datasets
 - contents:
