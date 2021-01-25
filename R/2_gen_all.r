@@ -7,6 +7,10 @@ gen_data_all <- function(base_loc) {
   # setwd(base_loc)
   # base_loc <- getwd()
 
+  location_code <- NULL
+  long <- NULL
+  lat <- NULL
+
   # 2020 ----
   # 2020 maps default county
   norway_nuts3_map_b2020_default_sf <- gen_norway_nuts3_map(x_year_end=2020, return_sf = T)

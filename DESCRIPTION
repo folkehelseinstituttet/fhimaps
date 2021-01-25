@@ -9,7 +9,7 @@ Authors@R: c(
   )
 Description: Preformatted maps of Norway that don't need geolibraries.
 Depends: R (>= 3.5.0)
-License: MIT + file LICENSE
+License: MIT
 URL: https://folkehelseinstituttet.github.io/fhimaps, https://github.com/folkehelseinstituttet/fhimaps
 BugReports: https://github.com/folkehelseinstituttet/fhimaps/issues
 LazyData: true
