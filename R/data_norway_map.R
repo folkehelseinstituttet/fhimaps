@@ -627,10 +627,10 @@ gen_norway_xxx_position_title_insert_oslo <- function(x_year_end) {
 
   label_positions <- data.table(
     long = c(
-      19.5
+      19.75
     ),
     lat = c(
-      64.75
+      64.5
     )
   )
 

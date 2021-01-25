@@ -150,7 +150,7 @@ gen_oslo_ward_position_geolabels <- function(x_year_end) {
   label_positions <- rbindlist(list(
     data.table(
       location_code = "wardoslo030101",
-      long = 10.8076,
+      long = 10.7976,
       lat = 59.9101
     ),
     data.table(
