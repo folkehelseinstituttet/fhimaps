@@ -28,9 +28,10 @@ libraries. This data is licensed under Creative Commons BY 4.0 (CC BY 4.0).
 }
 \examples{
 library(ggplot2)
-q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
+q <- ggplot(mapping = aes(x = long, y = lat))
 q <- q + geom_polygon(
   data = fhimaps::oslo_ward_map_b2020_default_dt,
+  mapping = aes(group = group, fill = location_code),
   color = "black",
   fill = "white",
   size = 0.2
