@@ -101,7 +101,7 @@
 #'   fill = "white",
 #'   size = 0.2
 #' )
-#' q <- q + geom_text(
+#' q <- q + geom_label(
 #'   data = fhimaps::norway_nuts3_position_geolabels_b2020_default_dt,
 #'   mapping = aes(label = location_code),
 #'   color = "red"
@@ -158,7 +158,11 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
+#' @name norway_lau2_map_b2020_default_dt
 "norway_lau2_map_b2020_default_dt"
+
+#' @rdname norway_lau2_map_b2020_default_dt
+"norway_lau2_position_geolabels_b2020_default_dt"
 
 # 2020 WITH INSERTS ----
 
@@ -187,7 +191,7 @@
 #'   fill = "white",
 #'   size = 0.2
 #' )
-#' q <- q + geom_text(
+#' q <- q + geom_label(
 #'   data = fhimaps::norway_nuts3_position_geolabels_b2020_insert_oslo_dt,
 #'   mapping = aes(label = location_code),
 #'   color = "red"
@@ -232,6 +236,9 @@
 #' @rdname norway_xxx_map_b2020_insert_oslo_dt
 "norway_nuts3_position_geolabels_b2020_insert_oslo_dt"
 
+#' @rdname norway_xxx_map_b2020_insert_oslo_dt
+"norway_lau2_position_geolabels_b2020_insert_oslo_dt"
+
 # 2019 WITHOUT INSERTS ----
 
 #' Maps of Norwegian county (2019 borders) in sf format
@@ -274,7 +281,7 @@
 #'   fill = "white",
 #'   size = 0.2
 #' )
-#' q <- q + geom_text(
+#' q <- q + geom_label(
 #'   data = fhimaps::norway_nuts3_position_geolabels_b2019_default_dt,
 #'   mapping = aes(label = location_code),
 #'   color = "red"
@@ -439,7 +446,7 @@
 #'   fill = "white",
 #'   size = 0.2
 #'  )
-#' q <- q + geom_text(
+#' q <- q + geom_label(
 #'   data = fhimaps::norway_nuts3_position_geolabels_b2017_default_dt,
 #'   mapping = aes(label = location_code),
 #'   color = "red"
@@ -550,8 +557,8 @@ gen_norway_nuts3_position_geolabels <- function(x_year_end, insert = F) {
     label_positions <- rbindlist(list(
       data.table(
         location_code = "county30",
-        long = 8.7,
-        lat = 60.4
+        long = 8.85,
+        lat = 60.60
       ),
       data.table(
         location_code = "county03",
@@ -561,7 +568,7 @@ gen_norway_nuts3_position_geolabels <- function(x_year_end, insert = F) {
       data.table(
         location_code = "county34",
         long = 11.0,
-        lat = 61.66886
+        lat = 61.86886
       ),
       data.table(
         location_code = "county38",
@@ -570,8 +577,8 @@ gen_norway_nuts3_position_geolabels <- function(x_year_end, insert = F) {
       ),
       data.table(
         location_code = "county42",
-        long = 8.15,
-        lat = 58.6
+        long = 7.8,
+        lat = 58.2
       ),
       data.table(
         location_code = "county11",
@@ -581,12 +588,12 @@ gen_norway_nuts3_position_geolabels <- function(x_year_end, insert = F) {
       data.table(
         location_code = "county46",
         long = 6.5,
-        lat = 61.15
+        lat = 61.4
       ),
       data.table(
         location_code = "county15",
-        long = 7.8,
-        lat = 62.5
+        long = 7.65,
+        lat = 62.6
       ),
       data.table(
         location_code = "county18",
@@ -613,9 +620,6 @@ gen_norway_nuts3_position_geolabels <- function(x_year_end, insert = F) {
 
   return(label_positions)
 }
-
-
-
 
 
 gen_norway_xxx_position_title_insert_oslo <- function(x_year_end) {

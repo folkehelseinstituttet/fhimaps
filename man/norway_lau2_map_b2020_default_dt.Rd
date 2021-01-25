@@ -3,6 +3,7 @@
 \docType{data}
 \name{norway_lau2_map_b2020_default_dt}
 \alias{norway_lau2_map_b2020_default_dt}
+\alias{norway_lau2_position_geolabels_b2020_default_dt}
 \title{Maps of Norwegian Municipalities (2020 borders) in data.table format}
 \format{
 \describe{
@@ -12,12 +13,16 @@
 \item{group}{Needs to be used as 'group' aesthetic in ggplot2.}
 \item{location_code}{Location code (municipality code).}
 }
+
+An object of class \code{data.table} (inherits from \code{data.frame}) with 356 rows and 3 columns.
 }
 \source{
 \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
 }
 \usage{
 norway_lau2_map_b2020_default_dt
+
+norway_lau2_position_geolabels_b2020_default_dt
 }
 \description{
 We conveniently package map datasets for Norwegian municipalities

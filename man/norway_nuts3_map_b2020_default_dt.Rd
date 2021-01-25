@@ -39,7 +39,7 @@ q <- q + geom_polygon(
   fill = "white",
   size = 0.2
 )
-q <- q + geom_text(
+q <- q + geom_label(
   data = fhimaps::norway_nuts3_position_geolabels_b2020_default_dt,
   mapping = aes(label = location_code),
   color = "red"

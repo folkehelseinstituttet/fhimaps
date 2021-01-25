@@ -7,6 +7,7 @@
 \alias{norway_lau2_map_b2020_insert_oslo_dt}
 \alias{norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt}
 \alias{norway_nuts3_position_geolabels_b2020_insert_oslo_dt}
+\alias{norway_lau2_position_geolabels_b2020_insert_oslo_dt}
 \title{Maps of Norwegian counties and municipalities with insert (2020 borders) in data.table format}
 \format{
 \describe{
@@ -22,6 +23,8 @@ An object of class \code{data.table} (inherits from \code{data.frame}) with 3065
 An object of class \code{data.table} (inherits from \code{data.frame}) with 1 rows and 2 columns.
 
 An object of class \code{data.table} (inherits from \code{data.frame}) with 11 rows and 3 columns.
+
+An object of class \code{data.table} (inherits from \code{data.frame}) with 356 rows and 3 columns.
 }
 \source{
 \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
@@ -34,6 +37,8 @@ norway_lau2_map_b2020_insert_oslo_dt
 norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt
 
 norway_nuts3_position_geolabels_b2020_insert_oslo_dt
+
+norway_lau2_position_geolabels_b2020_insert_oslo_dt
 }
 \description{
 We conveniently package map datasets for Norwegian county
@@ -50,7 +55,7 @@ q <- q + geom_polygon(
   fill = "white",
   size = 0.2
 )
-q <- q + geom_text(
+q <- q + geom_label(
   data = fhimaps::norway_nuts3_position_geolabels_b2020_insert_oslo_dt,
   mapping = aes(label = location_code),
   color = "red"
