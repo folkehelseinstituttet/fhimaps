@@ -26,9 +26,10 @@ libraries. This data is licensed under Creative Commons 0.
 }
 \examples{
 library(ggplot2)
-q <- ggplot(mapping = aes(x = long, y = lat, group = group))
+q <- ggplot(mapping = aes(x = long, y = lat))
 q <- q + geom_polygon(
   data = fhimaps::norway_lau2_map_b2019_default_dt,
+  mapping = aes(group = group),
   color = "black",
   fill = "white",
   size = 0.2

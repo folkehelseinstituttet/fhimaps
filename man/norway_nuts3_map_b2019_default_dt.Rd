@@ -3,6 +3,7 @@
 \docType{data}
 \name{norway_nuts3_map_b2019_default_dt}
 \alias{norway_nuts3_map_b2019_default_dt}
+\alias{norway_nuts3_position_geolabels_b2019_default_dt}
 \title{Maps of Norwegian county (2019 borders)}
 \format{
 \describe{
@@ -12,12 +13,16 @@
 \item{group}{Needs to be used as 'group' aesthetic in ggplot2.}
 \item{location_code}{Location code (county code).}
 }
+
+An object of class \code{data.table} (inherits from \code{data.frame}) with 18 rows and 3 columns.
 }
 \source{
 \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
 }
 \usage{
 norway_nuts3_map_b2019_default_dt
+
+norway_nuts3_position_geolabels_b2019_default_dt
 }
 \description{
 We conveniently package map datasets for Norwegian county
@@ -26,12 +31,18 @@ libraries. This data is licensed under Creative Commons 0.
 }
 \examples{
 library(ggplot2)
-q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
+q <- ggplot(mapping = aes(x = long, y = lat))
 q <- q + geom_polygon(
   data = fhimaps::norway_nuts3_map_b2019_default_dt,
+  mapping = aes(group = group, fill = location_code),
   color = "black",
   fill = "white",
   size = 0.2
+)
+q <- q + geom_text(
+  data = fhimaps::norway_nuts3_position_geolabels_b2019_default_dt,
+  mapping = aes(label = location_code),
+  color = "red"
 )
 q <- q + theme_void()
 q <- q + coord_quickmap()

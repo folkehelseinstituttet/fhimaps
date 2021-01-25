@@ -3,7 +3,8 @@
 \docType{data}
 \name{norway_nuts3_map_b2017_insert_oslo_dt}
 \alias{norway_nuts3_map_b2017_insert_oslo_dt}
-\title{Maps of Norwegian county with inserts (2017 borders)}
+\alias{norway_xxx_position_title_insert_oslo_b2017_insert_oslo_dt}
+\title{Maps of Norwegian county with inserts (2017 borders) in data.table format}
 \format{
 \describe{
 \item{long}{Location code.}
@@ -12,12 +13,16 @@
 \item{group}{Needs to be used as 'group' aesthetic in ggplot2.}
 \item{location_code}{Location code (county code).}
 }
+
+An object of class \code{data.table} (inherits from \code{data.frame}) with 1 rows and 2 columns.
 }
 \source{
 \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
 }
 \usage{
 norway_nuts3_map_b2017_insert_oslo_dt
+
+norway_xxx_position_title_insert_oslo_b2017_insert_oslo_dt
 }
 \description{
 We conveniently package map datasets for Norwegian county
@@ -26,12 +31,19 @@ libraries. This data is licensed under Creative Commons 0.
 }
 \examples{
 library(ggplot2)
-q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
+q <- ggplot(mapping = aes(x = long, y = lat))
 q <- q + geom_polygon(
   data = fhimaps::norway_nuts3_map_b2017_insert_oslo_dt,
+  mapping = aes(group = group, fill = location_code),
   color = "black",
   fill = "white",
   size = 0.2
+)
+q <- q + annotate(
+  "text",
+  x = fhimaps::norway_xxx_position_title_insert_oslo_b2017_insert_oslo_dt$long,
+  y = fhimaps::norway_xxx_position_title_insert_oslo_b2017_insert_oslo_dt$lat,
+  label = "Oslo"
 )
 q <- q + theme_void()
 q <- q + coord_quickmap()

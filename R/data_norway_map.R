@@ -1,5 +1,5 @@
-###### 2020 SPLIT
-#' Split map of Norwegian county (2020 borders)
+# 2020 split county ----
+#' Split map of Norwegian county (2020 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -16,9 +16,10 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
 #' @examples
 #' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
+#' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
 #'   data = fhimaps::norway_nuts3_map_b2020_split_dt,
+#'   mapping = aes(group = group, fill = location_code),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -28,7 +29,8 @@
 #' q
 "norway_nuts3_map_b2020_split_dt"
 
-#' Split map of Norwegian Municipalities (2020 borders)
+# 2020 split municip ----
+#' Split map of Norwegian Municipalities (2020 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian municipalities
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -45,9 +47,10 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
 #' @examples
 #' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
+#' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
 #'   data = fhimaps::norway_lau2_map_b2020_split_dt,
+#'   mapping = aes(group = group),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -57,7 +60,7 @@
 #' q
 "norway_lau2_map_b2020_split_dt"
 
-###### 2020 WITHOUT INSERTS
+# 2020 WITHOUT INSERTS ----
 
 #' Maps of Norwegian county (2020 borders) in sf format
 #'
@@ -73,9 +76,7 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
 "norway_nuts3_map_b2020_default_sf"
 
-
-
-#' Maps of Norwegian county (2020 borders)
+#' Maps of Norwegian county (2020 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -92,17 +93,27 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
 #' @examples
 #' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
+#' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
 #'   data = fhimaps::norway_nuts3_map_b2020_default_dt,
+#'   mapping = aes(group = group, fill = location_code),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
 #' )
+#' q <- q + geom_text(
+#'   data = fhimaps::norway_nuts3_position_geolabels_b2020_default_dt,
+#'   mapping = aes(label = location_code),
+#'   color = "red"
+#' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
+#' @name norway_nuts3_map_b2020_default_dt
 "norway_nuts3_map_b2020_default_dt"
+
+#' @rdname norway_nuts3_map_b2020_default_dt
+"norway_nuts3_position_geolabels_b2020_default_dt"
 
 #' Maps of Norwegian Municipalities (2020 borders) in sf format
 #'
@@ -119,7 +130,7 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
 "norway_lau2_map_b2020_default_sf"
 
-#' Maps of Norwegian Municipalities (2020 borders)
+#' Maps of Norwegian Municipalities (2020 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian municipalities
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -136,9 +147,10 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
 #' @examples
 #' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
+#' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
 #'   data = fhimaps::norway_lau2_map_b2020_default_dt,
+#'   mapping = aes(group = group),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -148,9 +160,9 @@
 #' q
 "norway_lau2_map_b2020_default_dt"
 
-###### 2020 WITH INSERTS
+# 2020 WITH INSERTS ----
 
-#' Maps of Norwegian county with insert (2020 borders)
+#' Maps of Norwegian counties and municipalities with insert (2020 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -167,48 +179,60 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
 #' @examples
 #' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
+#' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
 #'   data = fhimaps::norway_nuts3_map_b2020_insert_oslo_dt,
+#'   mapping = aes(group = group, fill = location_code),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
 #' )
+#' q <- q + geom_text(
+#'   data = fhimaps::norway_nuts3_position_geolabels_b2020_insert_oslo_dt,
+#'   mapping = aes(label = location_code),
+#'   color = "red"
+#' )
+#' q <- q + annotate(
+#'   "text",
+#'   x = fhimaps::norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt$long,
+#'   y = fhimaps::norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt$lat,
+#'   label = "Oslo"
+#' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_nuts3_map_b2020_insert_oslo_dt"
-
-#' Maps of Norwegian municipalities with insert (2020 borders)
 #'
-#' We conveniently package map datasets for Norwegian municipalities
-#' (taken from Geonorge) that can be used in ggplot2 without needing any geo
-#' libraries. This data is licensed under Creative Commons BY 4.0 (CC BY 4.0).
-#'
-#' @format
-#' \describe{
-#' \item{long}{Location code.}
-#' \item{lat}{Location name.}
-#' \item{order}{The order that this line should be plotted in.}
-#' \item{group}{Needs to be used as 'group' aesthetic in ggplot2.}
-#' \item{location_code}{Location code (municipality code).}
-#' }
-#' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
-#' @examples
 #' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
+#' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
 #'   data = fhimaps::norway_lau2_map_b2020_insert_oslo_dt,
+#'   mapping = aes(group = group),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
 #' )
+#' q <- q + annotate(
+#'   "text",
+#'   x = fhimaps::norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt$long,
+#'   y = fhimaps::norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt$lat,
+#'   label = "Oslo"
+#' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
+#' @name norway_xxx_map_b2020_insert_oslo_dt
+"norway_nuts3_map_b2020_insert_oslo_dt"
+
+#' @rdname norway_xxx_map_b2020_insert_oslo_dt
 "norway_lau2_map_b2020_insert_oslo_dt"
 
-###### 2019 WITHOUT INSERTS
+#' @rdname norway_xxx_map_b2020_insert_oslo_dt
+"norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt"
+
+#' @rdname norway_xxx_map_b2020_insert_oslo_dt
+"norway_nuts3_position_geolabels_b2020_insert_oslo_dt"
+
+# 2019 WITHOUT INSERTS ----
 
 #' Maps of Norwegian county (2019 borders) in sf format
 #'
@@ -242,17 +266,27 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
 #' @examples
 #' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
+#' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
 #'   data = fhimaps::norway_nuts3_map_b2019_default_dt,
+#'   mapping = aes(group = group, fill = location_code),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
 #' )
+#' q <- q + geom_text(
+#'   data = fhimaps::norway_nuts3_position_geolabels_b2019_default_dt,
+#'   mapping = aes(label = location_code),
+#'   color = "red"
+#' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
+#' @name norway_nuts3_map_b2019_default_dt
 "norway_nuts3_map_b2019_default_dt"
+
+#' @rdname norway_nuts3_map_b2019_default_dt
+"norway_nuts3_position_geolabels_b2019_default_dt"
 
 #' Maps of Norwegian Municipalities (2019 borders) in sf format
 #'
@@ -286,9 +320,10 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
 #' @examples
 #' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
+#' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
 #'   data = fhimaps::norway_lau2_map_b2019_default_dt,
+#'   mapping = aes(group = group),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -298,9 +333,9 @@
 #' q
 "norway_lau2_map_b2019_default_dt"
 
-###### 2019 WITH INSERTS
+# 2019 WITH INSERTS ----
 
-#' Maps of Norwegian county with inserts (2019 borders)
+#' Maps of Norwegian counties and municipalities with inserts (2019 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -317,48 +352,52 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
 #' @examples
 #' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
+#' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
 #'   data = fhimaps::norway_nuts3_map_b2019_insert_oslo_dt,
+#'   mapping = aes(group = group, fill = location_code),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
 #' )
+#' q <- q + annotate(
+#'   "text",
+#'   x = fhimaps::norway_xxx_position_title_insert_oslo_b2019_insert_oslo_dt$long,
+#'   y = fhimaps::norway_xxx_position_title_insert_oslo_b2019_insert_oslo_dt$lat,
+#'   label = "Oslo"
+#' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"norway_nuts3_map_b2019_insert_oslo_dt"
-
-#' Maps of Norwegian municipalities with insert (2019 borders)
 #'
-#' We conveniently package map datasets for Norwegian municipalities
-#' (taken from Geonorge) that can be used in ggplot2 without needing any geo
-#' libraries. This data is licensed under Creative Commons 0.
-#'
-#' @format
-#' \describe{
-#' \item{long}{Location code.}
-#' \item{lat}{Location name.}
-#' \item{order}{The order that this line should be plotted in.}
-#' \item{group}{Needs to be used as 'group' aesthetic in ggplot2.}
-#' \item{location_code}{Location code (municipality code).}
-#' }
-#' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
-#' @examples
 #' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat, group = group))
+#' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
 #'   data = fhimaps::norway_lau2_map_b2019_insert_oslo_dt,
+#'   mapping = aes(group = group),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
 #' )
+#' q <- q + annotate(
+#'   "text",
+#'   x = fhimaps::norway_xxx_position_title_insert_oslo_b2019_insert_oslo_dt$long,
+#'   y = fhimaps::norway_xxx_position_title_insert_oslo_b2019_insert_oslo_dt$lat,
+#'   label = "Oslo"
+#' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
+#' @name norway_xxx_map_b2019_insert_oslo_dt
+"norway_nuts3_map_b2019_insert_oslo_dt"
+
+#' @rdname norway_xxx_map_b2019_insert_oslo_dt
 "norway_lau2_map_b2019_insert_oslo_dt"
 
-###### 2017 WITHOUT INSERTS
+#' @rdname norway_xxx_map_b2019_insert_oslo_dt
+"norway_xxx_position_title_insert_oslo_b2019_insert_oslo_dt"
+
+# 2017 WITHOUT INSERTS ----
 
 #' Maps of Norwegian county (2017 borders) in sf format
 #'
@@ -375,7 +414,7 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
 "norway_nuts3_map_b2017_default_sf"
 
-#' Maps of Norwegian county (2017 borders)
+#' Maps of Norwegian county (2017 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -392,21 +431,31 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
 #' @examples
 #' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
+#' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
 #'   data = fhimaps::norway_nuts3_map_b2017_default_dt,
+#'   mapping = aes(group = group, fill = location_code),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
 #'  )
+#' q <- q + geom_text(
+#'   data = fhimaps::norway_nuts3_position_geolabels_b2017_default_dt,
+#'   mapping = aes(label = location_code),
+#'   color = "red"
+#' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
+#' @name norway_nuts3_map_b2017_default_dt
 "norway_nuts3_map_b2017_default_dt"
 
-###### 2017 WITH INSERTS
+#' @rdname norway_nuts3_map_b2017_default_dt
+"norway_nuts3_position_geolabels_b2017_default_dt"
 
-#' Maps of Norwegian county with inserts (2017 borders)
+# 2017 WITH INSERTS ----
+
+#' Maps of Norwegian county with inserts (2017 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -423,184 +472,10 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
 #' @examples
 #' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat, group = group, fill = location_code))
+#' q <- ggplot(mapping = aes(x = long, y = lat))
 #' q <- q + geom_polygon(
 #'   data = fhimaps::norway_nuts3_map_b2017_insert_oslo_dt,
-#'   color = "black",
-#'   fill = "white",
-#'   size = 0.2
-#' )
-#' q <- q + theme_void()
-#' q <- q + coord_quickmap()
-#' q
-"norway_nuts3_map_b2017_insert_oslo_dt"
-
-#### LABEL POSITIONS
-
-#' Label Positions for Norwegian county (2020 borders)
-#'
-#' GPS coordinates for labels for Norwegian county
-#'
-#' @format
-#' \describe{
-#' \item{location_code}{Location code (county code).}
-#' \item{long}{Location code.}
-#' \item{lat}{Location name.}
-#' }
-#' @examples
-#' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat))
-#' q <- q + geom_polygon(
-#'   data = fhimaps::norway_nuts3_map_b2020_default_dt,
-#'   mapping = aes(group = group),
-#'   color = "black",
-#'   fill = "white"
-#' )
-#' q <- q + geom_text(
-#'   data = fhimaps::norway_nuts3_positions_geolabels_b2020_default_dt,
-#'   mapping = aes(label = location_code),
-#'   color = "red"
-#' )
-#' q <- q + theme_void()
-#' q <- q + coord_quickmap()
-#' q
-"norway_nuts3_positions_geolabels_b2020_default_dt"
-
-#' Label Positions for Norwegian county (2019 borders)
-#'
-#' GPS coordinates for labels for Norwegian county
-#'
-#' @format
-#' \describe{
-#' \item{location_code}{Location code (county code).}
-#' \item{long}{Location code.}
-#' \item{lat}{Location name.}
-#' }
-#' @examples
-#' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat))
-#' q <- q + geom_polygon(
-#'   data = fhimaps::norway_nuts3_map_b2019_default_dt)
-#' q <- q + geom_text(
-#'   data = fhimaps::norway_nuts3_positions_geolabels_b2019_default_dt,
-#'   mapping = aes(label = location_code),
-#'   color = "red"
-#' )
-#' q <- q + theme_void()
-#' q <- q + coord_quickmap()
-#' q
-"norway_nuts3_positions_geolabels_b2019_default_dt"
-
-#' Label Positions for Norwegian county (2017 borders)
-#'
-#' GPS coordinates for labels for Norwegian county
-#'
-#' @format
-#' \describe{
-#' \item{location_code}{Location code (county code).}
-#' \item{long}{Location code.}
-#' \item{lat}{Location name.}
-#' }
-#' @examples
-#' library(ggplot2)
-#' q <- ggplot(mapping = aes(x = long, y = lat))
-#' q <- q + geom_polygon(
-#'   data = fhimaps::norway_nuts3_map_b2017_default_dt,
-#'   mapping = aes(group = group),
-#'   color = "black",
-#'   fill = "white",
-#'   size = 0.2
-#' )
-#' q <- q + geom_text(
-#'   data = fhimaps::norway_nuts3_positions_geolabels_b2017_default_dt,
-#'   mapping = aes(label = location_code),
-#'   color = "red"
-#' )
-#' q <- q + theme_void()
-#' q <- q + coord_quickmap()
-#' q
-"norway_nuts3_positions_geolabels_b2017_default_dt"
-
-#### TITLE POSITIONS
-
-#' Title Positions for Inserts (2020 borders)
-#'
-#' GPS coordinates for inserts for Norwegian maps
-#'
-#' @format
-#' \describe{
-#' \item{long}{Location code.}
-#' \item{lat}{Location name.}
-#' }
-#' @examples
-#' library(ggplot2)
-#' pd <- fhimaps::norway_nuts3_map_b2020_insert_oslo_dt
-#' q <- ggplot()
-#' q <- q + geom_polygon(
-#'   data = pd,
-#'   aes(x = long, y = lat, group = group, fill = location_code),
-#'   color = "black",
-#'   fill = "white",
-#'   size = 0.2
-#' )
-#' q <- q + annotate(
-#'   "text",
-#'   x = fhimaps::norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt$long,
-#'   y = fhimaps::norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt$lat,
-#'   label = "Oslo"
-#' )
-#' q <- q + theme_void()
-#' q <- q + coord_quickmap()
-#' q
-"norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt"
-
-#' Title Positions for Inserts (2019 borders)
-#'
-#' GPS coordinates for inserts for Norwegian maps
-#'
-#' @format
-#' \describe{
-#' \item{long}{Location code.}
-#' \item{lat}{Location name.}
-#' }
-#' @examples
-#' library(ggplot2)
-#' pd <- fhimaps::norway_nuts3_map_b2019_insert_oslo_dt
-#' q <- ggplot()
-#' q <- q + geom_polygon(
-#'   data = pd,
-#'   aes(x = long, y = lat, group = group, fill = location_code),
-#'   color = "black",
-#'   fill = "white",
-#'   size = 0.2
-#' )
-#' q <- q + annotate(
-#'   "text",
-#'   x = fhimaps::norway_xxx_position_title_insert_oslo_b2019_insert_oslo_dt$long,
-#'   y = fhimaps::norway_xxx_position_title_insert_oslo_b2019_insert_oslo_dt$lat,
-#'   label = "Oslo"
-#' )
-#' q <- q + theme_void()
-#' q <- q + coord_quickmap()
-#' q
-"norway_xxx_position_title_insert_oslo_b2019_insert_oslo_dt"
-
-#' Title Positions for Inserts (2017 borders)
-#'
-#' GPS coordinates for inserts for Norwegian maps
-#'
-#' @format
-#' \describe{
-#' \item{long}{Location code.}
-#' \item{lat}{Location name.}
-#' }
-#' @examples
-#' library(ggplot2)
-#' pd <- fhimaps::norway_nuts3_map_b2017_insert_oslo_dt
-#' q <- ggplot()
-#' q <- q + geom_polygon(
-#'   data = pd,
-#'   aes(x = long, y = lat, group = group, fill = location_code),
+#'   mapping = aes(group = group, fill = location_code),
 #'   color = "black",
 #'   fill = "white",
 #'   size = 0.2
@@ -614,15 +489,17 @@
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
+#' @rdname norway_nuts3_map_b2017_insert_oslo_dt
+"norway_nuts3_map_b2017_insert_oslo_dt"
+
+#' @name norway_nuts3_map_b2017_insert_oslo_dt
 "norway_xxx_position_title_insert_oslo_b2017_insert_oslo_dt"
 
 
-
-
-
-
-
-gen_norway_nuts3_position_geolabels <- function(x_year_end) {
+gen_norway_nuts3_position_geolabels <- function(x_year_end, insert = F) {
+  location_code <- NULL
+  long <- NULL
+  lat <- NULL
   stopifnot(x_year_end %in% c("2017", "2019", "2020"))
 
   if (x_year_end == 2017) {
@@ -670,24 +547,68 @@ gen_norway_nuts3_position_geolabels <- function(x_year_end) {
       )
     )
   } else if (x_year_end == 2020) {
-    label_positions <- data.table(
-      location_code = c(
-        "county30", "county03", "county34",
-        "county38",
-        "county42", "county11", "county46",
-        "county15", "county18", "county54",
-        "county50"
+    label_positions <- rbindlist(list(
+      data.table(
+        location_code = "county30",
+        long = 8.7,
+        lat = 60.4
       ),
-      long = c(
-        8.7, 10.72028, 11.0, 8.5,
-        8.15, 6.1, 6.5, 7.8, 14.8, 19.244275, 11
+      data.table(
+        location_code = "county03",
+        long = 10.72028,
+        lat = 59.98
       ),
-
-      lat = c(
-        60.4, 59.98, 61.26886, 59.32481,
-        58.6, 58.7, 60.7, 62.5, 66.5, 68.9, 63
+      data.table(
+        location_code = "county34",
+        long = 11.0,
+        lat = 61.66886
+      ),
+      data.table(
+        location_code = "county38",
+        long = 8.5,
+        lat = 59.32481
+      ),
+      data.table(
+        location_code = "county42",
+        long = 8.15,
+        lat = 58.6
+      ),
+      data.table(
+        location_code = "county11",
+        long = 6.1,
+        lat = 58.7
+      ),
+      data.table(
+        location_code = "county46",
+        long = 6.5,
+        lat = 61.15
+      ),
+      data.table(
+        location_code = "county15",
+        long = 7.8,
+        lat = 62.5
+      ),
+      data.table(
+        location_code = "county18",
+        long = 14.8,
+        lat = 66.75
+      ),
+      data.table(
+        location_code = "county54",
+        long = 22.94275,
+        lat = 69.5
+      ),
+      data.table(
+        location_code = "county50",
+        long = 11.7,
+        lat = 64.15
       )
-    )
+    ))
+    # fix oslo insert if desired
+    if(insert){
+      label_positions[location_code=="county03", long := 20.85]
+      label_positions[location_code=="county03", lat := 62]
+    }
   }
 
   return(label_positions)

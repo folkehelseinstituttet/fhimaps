@@ -1,12 +1,14 @@
 ---
-title: "fhimaps: map data for Norway"
+title: "Introduction"
 output: rmarkdown::html_vignette
 author: "Richard Aubrey White, Chi Zhang"
 date: "2021-01-15"
 vignette: >
-  %\VignetteIndexEntry{fhimaps: map data for Norway}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Introduction}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include = FALSE}
@@ -217,7 +219,7 @@ q <- ggplot()
 q <- q + geom_polygon(data = pd, aes(x = long, y = lat, group = group, fill = location_code),  
                       color="black", size=0.1)
 q <- q + geom_label(
-  data = fhimaps::norway_nuts3_positions_geolabels_b2020_default_dt,
+  data = fhimaps::norway_nuts3_position_geolabels_b2020_default_dt,
   mapping = aes(x = long, y = lat, label = location_code)
   )
 q <- q + theme_void()
@@ -232,20 +234,23 @@ q
 ```{r fig.height=6, fig.width=6}
 q <- ggplot(mapping = aes(x = long, y = lat))
 q <- q + geom_polygon(
-   data = fhimaps::oslo_ward_map_b2020_default_dt,
-   mapping = aes(group = group),
-   color = "black",
-   fill = "white",
-   size = 0.2
- )
- q <- q + ggrepel::geom_label_repel(
-   data = fhimaps::oslo_ward_positions_geolabels_b2020_default_dt,
-   mapping = aes(label = location_code),
-   color = "red"
- )
- q <- q + theme_void()
- q <- q + coord_quickmap()
- q
+  data = fhimaps::oslo_ward_map_b2020_default_dt,
+  mapping = aes(group = group),
+  color = "black",
+  fill = "white",
+  size = 0.2
+)
+q <- q + geom_label(
+  data = fhimaps::oslo_ward_position_geolabels_b2020_default_dt,
+  mapping = aes(label = location_code),
+  color = "red",
+  size = 3,
+  label.size = 0.1,
+  label.r = grid::unit(0, "lines")
+)
+q <- q + theme_void()
+q <- q + coord_quickmap()
+q
 
 ```
 
@@ -254,7 +259,7 @@ q <- q + geom_polygon(
 
 
 ```{r fig.height=6, fig.width=6}
-label_county <- fhimaps::norway_nuts3_positions_geolabels_b2020_default_dt
+label_county <- fhimaps::norway_nuts3_position_geolabels_b2020_default_dt
 
 # enrich with population and location name
 dpop_county_2020 <- fhidata::norway_population_b2020[
@@ -290,23 +295,27 @@ q
 
 
 ```{r fig.height=6, fig.width=6}
-label_oslo <- fhimaps::oslo_ward_positions_geolabels_b2020_default_dt
-
 # enrich with population and location name
 dpop_oslo_2020 <- fhidata::norway_population_b2020[
-  granularity_geo == 'wardoslo' & year == '2020'][
-    , pop_total := sum(pop), by = location_code][
-      , .(location_code, pop_total)] %>% unique
-
-
-dloc_oslo_2020 <- fhidata::norway_locations_long_b2020[granularity_geo == 'wardoslo',
-                                             .(location_code, location_name)]
+  year == '2020',
+  .(pop_total = sum(pop)),
+  keyby = location_code
+]
 
 # join, create label
-dd <- label_oslo[dpop_oslo_2020, on = 'location_code']
-dd <- dd[dloc_oslo_2020, on = 'location_code']
-dd[, label := paste0(location_name, '\n', pop_total)]
-print(head(dd))
+labels <- copy(fhimaps::oslo_ward_position_geolabels_b2020_default_dt)
+labels[
+  dpop_oslo_2020, 
+  on = "location_code",
+  pop_total := pop_total
+]
+labels[
+  fhidata::norway_locations_long_b2020, 
+  on = "location_code",
+  location_name := location_name
+]
+labels[, label := paste0(location_name, '\n', pop_total)]
+print(head(labels))
 
 q <- ggplot(mapping = aes(x = long, y = lat))
 q <- q + geom_polygon(
@@ -316,10 +325,13 @@ q <- q + geom_polygon(
   fill = "white",
   size = 0.2
 )
-q <- q + ggrepel::geom_label_repel(
-  data = dd,
+q <- q + geom_label(
+  data = labels,
   mapping = aes(label = label),
-  color = "red"
+  color = "red",
+  size = 3,
+  label.size = 0.1,
+  label.r = grid::unit(0, "lines")
 )
 q <- q + theme_void()
 q <- q + coord_quickmap()
@@ -349,7 +361,7 @@ leaflet::leaflet(
 
 
 # to do 
-2. `norway_nuts3_positions_geolabels_b2020_insert_oslo_dt`, change oslo coordinate
+2. `norway_nuts3_position_geolabels_b2020_insert_oslo_dt`, change oslo coordinate
 
 
 

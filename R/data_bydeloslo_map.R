@@ -64,14 +64,14 @@
 #'   size = 0.2
 #' )
 #' q <- q + geom_text(
-#'   data = fhimaps::oslo_ward_positions_geolabels_b2020_default_dt,
+#'   data = fhimaps::oslo_ward_position_geolabels_b2020_default_dt,
 #'   mapping = aes(label = location_code),
 #'   color = "red"
 #' )
 #' q <- q + theme_void()
 #' q <- q + coord_quickmap()
 #' q
-"oslo_ward_positions_geolabels_b2020_default_dt"
+"oslo_ward_position_geolabels_b2020_default_dt"
 
 
 gen_oslo_ward_map <- function(return_sf=FALSE) {
@@ -147,31 +147,83 @@ gen_oslo_ward_position_geolabels <- function(x_year_end) {
 
   stopifnot(x_year_end == 2020)
 
-  label_positions <- data.table(
-    location_code = c(
-      "wardoslo030101", "wardoslo030102", "wardoslo030103",
-      "wardoslo030104", "wardoslo030105", "wardoslo030106",
-      "wardoslo030107", "wardoslo030108", "wardoslo030109",
-      "wardoslo030110", "wardoslo030111", "wardoslo030112",
-      "wardoslo030113", "wardoslo030114", "wardoslo030115"
+  label_positions <- rbindlist(list(
+    data.table(
+      location_code = "wardoslo030101",
+      long = 10.8076,
+      lat = 59.9101
     ),
-    long = c(
-      10.77076, 10.77518, 10.76383,
-      10.73555, 10.70443, 10.65910,
-      10.66882, 10.75822, 10.82681,
-      10.88254, 10.92289, 10.87209,
-      10.84233, 10.79450, 10.82684
+    data.table(
+      location_code = "wardoslo030102",
+      long = 10.78,
+      lat = 59.92567
     ),
-
-    lat = c(
-      59.90634, 59.92367, 59.93981,
-      59.92530, 59.91825, 59.92892,
-      59.95663, 59.95677, 59.94436,
-      59.96523, 59.95431, 59.92764,
-      59.88955, 59.86403, 59.83747
+    data.table(
+      location_code = "wardoslo030103",
+      long = 10.76683,
+      lat = 59.93981
+    ),
+    data.table(
+      location_code = "wardoslo030104",
+      long = 10.73555,
+      lat = 59.91230
+    ),
+    data.table(
+      location_code = "wardoslo030105",
+      long = 10.665,
+      lat = 59.89925
+    ),
+    data.table(
+      location_code = "wardoslo030106",
+      long = 10.650,
+      lat = 59.925
+    ),
+    data.table(
+      location_code = "wardoslo030107",
+      long = 10.66882,
+      lat = 59.95663
+    ),
+    data.table(
+      location_code = "wardoslo030108",
+      long = 10.75822,
+      lat = 59.95677
+    ),
+    data.table(
+      location_code = "wardoslo030109",
+      long = 10.82981,
+      lat = 59.94436
+    ),
+    data.table(
+      location_code = "wardoslo030110",
+      long = 10.88254,
+      lat = 59.96523
+    ),
+    data.table(
+      location_code = "wardoslo030111",
+      long = 10.93,
+      lat = 59.955
+    ),
+    data.table(
+      location_code = "wardoslo030112",
+      long = 10.87209,
+      lat = 59.92964
+    ),
+    data.table(
+      location_code = "wardoslo030113",
+      long = 10.84233,
+      lat = 59.89
+    ),
+    data.table(
+      location_code = "wardoslo030114",
+      long = 10.77650,
+      lat = 59.870
+    ),
+    data.table(
+      location_code = "wardoslo030115",
+      long = 10.81,
+      lat = 59.83
     )
-  )
-
+  ))
 
   return(label_positions)
 }

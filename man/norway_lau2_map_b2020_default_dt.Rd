@@ -3,7 +3,7 @@
 \docType{data}
 \name{norway_lau2_map_b2020_default_dt}
 \alias{norway_lau2_map_b2020_default_dt}
-\title{Maps of Norwegian Municipalities (2020 borders)}
+\title{Maps of Norwegian Municipalities (2020 borders) in data.table format}
 \format{
 \describe{
 \item{long}{Location code.}
@@ -26,9 +26,10 @@ libraries. This data is licensed under Creative Commons BY 4.0 (CC BY 4.0).
 }
 \examples{
 library(ggplot2)
-q <- ggplot(mapping = aes(x = long, y = lat, group = group))
+q <- ggplot(mapping = aes(x = long, y = lat))
 q <- q + geom_polygon(
   data = fhimaps::norway_lau2_map_b2020_default_dt,
+  mapping = aes(group = group),
   color = "black",
   fill = "white",
   size = 0.2
