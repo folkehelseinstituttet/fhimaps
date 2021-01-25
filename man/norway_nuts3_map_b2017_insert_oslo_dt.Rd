@@ -4,7 +4,7 @@
 \name{norway_nuts3_map_b2017_insert_oslo_dt}
 \alias{norway_nuts3_map_b2017_insert_oslo_dt}
 \alias{norway_xxx_position_title_insert_oslo_b2017_insert_oslo_dt}
-\title{Maps of Norwegian county with inserts (2017 borders) in data.table format}
+\title{Map of Norwegian counties with inserts (2017 borders) in data.table format}
 \format{
 \describe{
 \item{long}{Location code.}

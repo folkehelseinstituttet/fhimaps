@@ -3,7 +3,7 @@
 \docType{data}
 \name{norway_lau2_map_b2020_split_dt}
 \alias{norway_lau2_map_b2020_split_dt}
-\title{Split map of Norwegian Municipalities (2020 borders) in data.table format}
+\title{Split map of Norwegian municipalities (2020 borders) in data.table format}
 \format{
 \describe{
 \item{long}{Location code.}

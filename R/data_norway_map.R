@@ -1,5 +1,5 @@
 # 2020 split county ----
-#' Split map of Norwegian county (2020 borders) in data.table format
+#' Split map of Norwegian counties (2020 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -30,7 +30,7 @@
 "norway_nuts3_map_b2020_split_dt"
 
 # 2020 split municip ----
-#' Split map of Norwegian Municipalities (2020 borders) in data.table format
+#' Split map of Norwegian municipalities (2020 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian municipalities
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -62,7 +62,7 @@
 
 # 2020 WITHOUT INSERTS ----
 
-#' Maps of Norwegian county (2020 borders) in sf format
+#' Map of Norwegian counties (2020 borders) in sf format
 #'
 #' This data is licensed under Creative Commons BY 4.0 (CC BY 4.0).
 #'
@@ -76,7 +76,7 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
 "norway_nuts3_map_b2020_default_sf"
 
-#' Maps of Norwegian county (2020 borders) in data.table format
+#' Map of Norwegian counties (2020 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -115,7 +115,7 @@
 #' @rdname norway_nuts3_map_b2020_default_dt
 "norway_nuts3_position_geolabels_b2020_default_dt"
 
-#' Maps of Norwegian Municipalities (2020 borders) in sf format
+#' Maps of Norwegian municipalities (2020 borders) in sf format
 #'
 #' This data is licensed under Creative Commons BY 4.0 (CC BY 4.0).
 #'
@@ -130,7 +130,7 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/norske-fylker-og-kommuner-illustrasjonsdata-2020-(klippet-etter-kyst)/7408853f-eb7d-48dd-bb6c-80c7e80f7392}
 "norway_lau2_map_b2020_default_sf"
 
-#' Maps of Norwegian Municipalities (2020 borders) in data.table format
+#' Map of Norwegian municipalities (2020 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian municipalities
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -166,7 +166,7 @@
 
 # 2020 WITH INSERTS ----
 
-#' Maps of Norwegian counties and municipalities with insert (2020 borders) in data.table format
+#' Maps of Norwegian counties and municipalities with an insert for Oslo (2020 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -241,7 +241,7 @@
 
 # 2019 WITHOUT INSERTS ----
 
-#' Maps of Norwegian county (2019 borders) in sf format
+#' Map of Norwegian counties (2019 borders) in sf format
 #'
 #' This data is licensed under Creative Commons 0.
 #'
@@ -256,7 +256,7 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
 "norway_nuts3_map_b2019_default_sf"
 
-#' Maps of Norwegian county (2019 borders)
+#' Map of Norwegian counties (2019 borders)
 #'
 #' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -295,7 +295,7 @@
 #' @rdname norway_nuts3_map_b2019_default_dt
 "norway_nuts3_position_geolabels_b2019_default_dt"
 
-#' Maps of Norwegian Municipalities (2019 borders) in sf format
+#' Map of Norwegian municipalities (2019 borders) in sf format
 #'
 #' This data is licensed under Creative Commons 0.
 #'
@@ -310,7 +310,7 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
 "norway_lau2_map_b2019_default_sf"
 
-#' Maps of Norwegian Municipalities (2019 borders)
+#' Map of Norwegian municipalities (2019 borders)
 #'
 #' We conveniently package map datasets for Norwegian municipalities
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -406,7 +406,7 @@
 
 # 2017 WITHOUT INSERTS ----
 
-#' Maps of Norwegian county (2017 borders) in sf format
+#' Map of Norwegian counties (2017 borders) in sf format
 #'
 #' This data is licensed under Creative Commons 0.
 #'
@@ -421,7 +421,7 @@
 #' @source \url{https://kartkatalog.geonorge.no/metadata/uuid/cb02ab77-d3e6-4500-8a92-ea67367e7734}
 "norway_nuts3_map_b2017_default_sf"
 
-#' Maps of Norwegian county (2017 borders) in data.table format
+#' Map of Norwegian counties (2017 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo
@@ -462,7 +462,7 @@
 
 # 2017 WITH INSERTS ----
 
-#' Maps of Norwegian county with inserts (2017 borders) in data.table format
+#' Map of Norwegian counties with inserts (2017 borders) in data.table format
 #'
 #' We conveniently package map datasets for Norwegian county
 #' (taken from Geonorge) that can be used in ggplot2 without needing any geo

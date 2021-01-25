@@ -4,7 +4,7 @@
 \name{norway_nuts3_map_b2020_default_dt}
 \alias{norway_nuts3_map_b2020_default_dt}
 \alias{norway_nuts3_position_geolabels_b2020_default_dt}
-\title{Maps of Norwegian county (2020 borders) in data.table format}
+\title{Map of Norwegian counties (2020 borders) in data.table format}
 \format{
 \describe{
 \item{long}{Location code.}

@@ -3,7 +3,7 @@
 \docType{data}
 \name{norway_lau2_map_b2019_default_dt}
 \alias{norway_lau2_map_b2019_default_dt}
-\title{Maps of Norwegian Municipalities (2019 borders)}
+\title{Map of Norwegian municipalities (2019 borders)}
 \format{
 \describe{
 \item{long}{Location code.}

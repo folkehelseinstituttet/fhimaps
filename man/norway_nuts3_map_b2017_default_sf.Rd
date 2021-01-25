@@ -3,7 +3,7 @@
 \docType{data}
 \name{norway_nuts3_map_b2017_default_sf}
 \alias{norway_nuts3_map_b2017_default_sf}
-\title{Maps of Norwegian county (2017 borders) in sf format}
+\title{Map of Norwegian counties (2017 borders) in sf format}
 \format{
 \describe{
 \item{long}{Location code.}

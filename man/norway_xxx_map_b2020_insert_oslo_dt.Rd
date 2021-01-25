@@ -8,7 +8,7 @@
 \alias{norway_xxx_position_title_insert_oslo_b2020_insert_oslo_dt}
 \alias{norway_nuts3_position_geolabels_b2020_insert_oslo_dt}
 \alias{norway_lau2_position_geolabels_b2020_insert_oslo_dt}
-\title{Maps of Norwegian counties and municipalities with insert (2020 borders) in data.table format}
+\title{Maps of Norwegian counties and municipalities with an insert for Oslo (2020 borders) in data.table format}
 \format{
 \describe{
 \item{long}{Location code.}
