@@ -10,10 +10,10 @@ reference:
   - matches("2020\\_default")
 - subtitle: With an insert for Oslo
 - contents:
-  - matches("2020\\_split")
+  - matches("2020\\_insert")
 - subtitle: Split in two
 - contents:
-  - matches("2020\\_default")
+  - matches("2020\\_split")
 
 - title: Maps with 2019 borders
 - subtitle: Default
@@ -21,12 +21,12 @@ reference:
   - matches("2019\\_default")
 - subtitle: With an insert for Oslo
 - contents:
-  - matches("2019\\_split")
+  - matches("2019\\_insert")
 
 - title: Maps with 2017 borders
 - subtitle: Default
 - contents:
-  - matches("201\\7_default")
+  - matches("2017\\_default")
 
 - title: Miscellaneous datasets
 - contents:
