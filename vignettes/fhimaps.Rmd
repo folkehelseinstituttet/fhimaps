@@ -1,10 +1,10 @@
 ---
-title: "Introduction"
+title: "Introduction to fhimaps"
 output: rmarkdown::html_vignette
 author: "Richard Aubrey White, Chi Zhang"
 date: "2021-01-15"
 vignette: >
-  %\VignetteIndexEntry{Introduction}
+  %\VignetteIndexEntry{Introduction to fhimaps}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 editor_options: 

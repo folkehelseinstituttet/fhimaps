@@ -2,13 +2,16 @@ Package: fhimaps
 Title: Preformatted Maps of Norway That Don't Need Geolibraries
 Version: 1.0.0
 Authors@R: c(
-  person(c("Richard","Aubrey"), "White", email = "hello@rwhite.no", role = c("aut", "cre")),
+  person(c("Richard","Aubrey"), "White", email = "hello@rwhite.no", role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0002-6747-1726")
+  ),
   person("Chi", "Zhang", email = "chi.zhang@fhi.no", role = c("aut"))
   )
 Description: Preformatted maps of Norway that don't need geolibraries.
 Depends: R (>= 3.5.0)
-License: GPL-3
-Encoding: UTF-8
+License: MIT + file LICENSE
+URL: https://folkehelseinstituttet.github.io/fhimaps, https://github.com/folkehelseinstituttet/fhimaps
+BugReports: https://github.com/folkehelseinstituttet/fhimaps/issues
 LazyData: true
 Imports: data.table,
     utils
@@ -40,4 +43,5 @@ Suggests: testthat,
     magrittr
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
+Encoding: UTF-8
 Additional_repositories: https://folkehelseinstituttet.github.io/drat/

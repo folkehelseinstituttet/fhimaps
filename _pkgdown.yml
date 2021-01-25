@@ -1,0 +1,15 @@
+url: https://folkehelseinstituttet.github.io/fhimaps
+
+development:
+  mode: auto
+
+reference:
+- title: Maps with 2020 borders
+- contents:
+  - matches("2020")
+- title: Maps with 2019 borders
+- contents:
+  - matches("2019")
+- title: Maps with 2017 borders
+- contents:
+  - matches("2017")
