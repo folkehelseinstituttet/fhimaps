@@ -1,7 +1,7 @@
 .onAttach <- function(libname, pkgname) {
-  packageStartupMessage(paste0(
-    "fhimaps ",
+  packageStartupMessage(paste(
+    "fhimaps",
     utils::packageDescription("fhimaps")$Version,
-    "https://folkehelseinstituttet.github.io/fhimaps","\033[39m"
+    "https://folkehelseinstituttet.github.io/fhimaps"
   ))
 }

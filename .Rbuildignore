@@ -28,3 +28,5 @@ LICENSE
 cran-comments.md
 ^.*\.Rcheck
 data-raw/*
+^Makefile$
+^Jenkinsfile$
