@@ -1,10 +1,12 @@
-Meta
-doc
 *.Rcheck
+*.tar.gz
+*.[rR][dD][sS]
+*.[rR][dD][aA][tT][aA]
 
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
+
 # Folder config file
 Desktop.ini
 # Recycle Bin used on file shares
@@ -36,8 +38,5 @@ Temporary Items
 .Rproj.user
 .Rhistory
 inst/doc
-*.swp
-inst/rawdata/Fylker20.gfs
-inst/rawdata/Fylker20.gml
-inst/rawdata/Kommuner20.gfs
-inst/rawdata/Kommuner20.gml
+doc
+Meta
