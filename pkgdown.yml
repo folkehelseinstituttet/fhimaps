@@ -1,0 +1,10 @@
+pandoc: 2.7.3
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  fhimaps: fhimaps.html
+last_built: 2021-02-06T06:42Z
+urls:
+  reference: https://folkehelseinstituttet.github.io/fhimaps/reference
+  article: https://folkehelseinstituttet.github.io/fhimaps/articles
+
