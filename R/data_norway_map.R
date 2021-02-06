@@ -578,7 +578,7 @@ gen_norway_nuts3_position_geolabels <- function(x_year_end, insert = F) {
       data.table(
         location_code = "county42",
         long = 7.8,
-        lat = 58.2
+        lat = 58.3
       ),
       data.table(
         location_code = "county11",
@@ -588,12 +588,12 @@ gen_norway_nuts3_position_geolabels <- function(x_year_end, insert = F) {
       data.table(
         location_code = "county46",
         long = 6.5,
-        lat = 61.4
+        lat = 61.45
       ),
       data.table(
         location_code = "county15",
-        long = 7.65,
-        lat = 62.6
+        long = 7.8,
+        lat = 62.5
       ),
       data.table(
         location_code = "county18",
@@ -607,7 +607,7 @@ gen_norway_nuts3_position_geolabels <- function(x_year_end, insert = F) {
       ),
       data.table(
         location_code = "county50",
-        long = 11.7,
+        long = 12.0,
         lat = 64.15
       )
     ))
